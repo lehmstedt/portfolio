@@ -1,0 +1,56 @@
+<dom-module id="pf-drawer-panel">
+
+  <template>
+    <style></style>
+
+    <paper-drawer-panel>
+      <paper-header-panel drawer>
+        <paper-toolbar>
+          <paper-icon-button icon="menu" paper-drawer-toggle>
+          </paper-icon-button>
+          <div class="title">Plan du site</div>
+        </paper-toolbar>
+        <paper-listbox>
+          <paper-item>
+            <iron-icon icon="social:school"></iron-icon>
+            Parcours scolaire
+          </paper-item>
+          <paper-item>
+            <iron-icon icon="work"></iron-icon>
+            Expérience professionelle</paper-item>
+          <paper-item>
+            <iron-icon icon="star"></iron-icon>
+            Projets
+          </paper-item>
+
+          <paper-item>
+            <iron-icon icon="social:share"></iron-icon>
+            Réseaux sociaux
+          </paper-icon>
+        </paper-listbox>
+      </paper-header-panel>
+
+      <paper-header-panel main>
+        <paper-toolbar>
+          <paper-icon-button icon="menu" paper-drawer-toggle>
+          </paper-icon-button>
+          <div class="title">PortFolio</div>
+        </paper-toolbar>
+      </paper-header-panel>
+    </paper-drawer-panel>
+
+  </template>
+
+  <script>
+
+  Polymer({
+
+    is:'pf-drawer-panel',
+
+    properties : {
+
+    },
+
+  });
+
+  </script>

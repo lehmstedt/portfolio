@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>port-folio test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../../src/port-folio/port-folio.html">
+  </head>
+  <body>
+
+    <test-fixture id="basic">
+      <template>
+        <port-folio></port-folio>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('port-folio', function() {
+
+        test('instantiating the element works', function() {
+          var element = fixture('basic');
+          assert.equal(element.is, 'port-folio');
+        });
+
+      });
+    </script>
+  </body>
+</html>
