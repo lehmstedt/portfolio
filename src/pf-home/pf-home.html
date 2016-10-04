@@ -1,0 +1,25 @@
+<dom-module id="pf-home">
+
+  <template>
+
+    <style></style>
+
+    Welcome on the home page
+
+    <app-location route="{{route}}"></app-location>
+  </template>
+
+  <script>
+
+  Polymer({
+    is: 'pf-home',
+
+    properties: {
+      route: {
+        type : Object,
+        notify: true,
+        reflectToAttribute: true,
+      },
+
+    },
+  });

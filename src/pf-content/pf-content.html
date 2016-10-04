@@ -1,9 +1,14 @@
+<link rel="import" href="../pf-home/pf-home.html">
+<link rel="import" href="../pf-projects/pf-projects.html">
+
 <dom-module id="pf-content">
 
   <template>
     <style></style>
 
-    You are on page {{page}}
+    <iron-pages id="ironpages" selected="{{route.path}}" attr-for-selected="name">
+      <pf-home name="accueil" route="{{route.path}}"></pf-home>
+      <pf-projects name="projets" route="{{route.path}}"></pf-projects>
   </template>
 
   <script>
@@ -13,8 +18,20 @@
     is: 'pf-content',
 
     properties: {
-      page : String,
+      route: {
+        type: Object,
+        notify: true,
+        reflectToAttribute: true
+      },
     },
+
+    ready: function(){
+      document.addEventListener('iron-select', this.onIronSelect2.bind(this));
+    },
+
+    onIronSelect2 : function(){
+      console.log(this.$.ironpages.selected);
+    }
 
   });
 

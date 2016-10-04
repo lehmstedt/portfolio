@@ -11,14 +11,21 @@
 <link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
 <link rel="import" href="../../bower_components/paper-item/paper-item.html">
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+
 //IRON
-<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="../../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+
+//APP
+<link rel="import" href="../../bower_components/app-route/app-location.html">
+<link rel="import" href="../../bower_components/app-route/app-route.html">
 
 //ELEMENTS
-<link rel="import" href="../pf-drawer-panel/pf-drawer-panel.html">
+<link rel="import" href="../pf-content/pf-content.html">
 
 <dom-module id="port-folio">
   <template>
@@ -28,7 +35,58 @@
       }
     </style>
 
-  <pf-drawer-panel></pf-drawer-panel>
+    <app-location id="location" route="{{route}}"></app-location>
+
+    <app-route id="approute"
+      route="{{route}}"
+      pattern="/:view"
+      data="{{routeData}}"
+      tail="{{subroute}}"></app-route>
+
+
+
+    <paper-drawer-panel>
+      <paper-header-panel drawer>
+        <paper-toolbar>
+          <div class="title">Topics</div>
+          <paper-icon-button icon="arrow-back" paper-drawer-toggle>
+          </paper-icon-button>
+        </paper-toolbar>
+        <paper-listbox selected="{{route.path}}" attr-for-selected="name">
+
+          <paper-item name="home">
+            <iron-icon icon="home"></iron-icon>
+            Home
+          </paper-item>
+
+          <paper-item name="projects">
+            <iron-icon icon="star"></iron-icon>
+            Projects
+          </paper-item>
+          <paper-item name="school">
+            <iron-icon icon="social:school"></iron-icon>
+            School
+          </paper-item>
+          <paper-item name="work">
+            <iron-icon icon="work"></iron-icon>
+            Work experience</paper-item>
+
+          <paper-item name="networks">
+            <iron-icon icon="social:share"></iron-icon>
+            Social networks
+          </paper-icon>
+        </paper-listbox>
+      </paper-header-panel>
+
+      <paper-header-panel main>
+        <paper-toolbar class="medium-tall">
+          <paper-icon-button icon="menu" paper-drawer-toggle>
+          </paper-icon-button>
+          <div class="title">PortFolio</div>
+        </paper-toolbar>
+        <pf-content route="{{route}}"></pf-content>
+      </paper-header-panel>
+    </paper-drawer-panel>
 
   </template>
 
@@ -38,7 +96,26 @@
       is: 'port-folio',
 
       properties: {
+        route : {
+          type : Object,
+          value: function(){
+            return {path: '/home', prefix: ''}
+          },
+          notify: true,
+          reflectToAttribute: true
+        },
+
       },
+
+
+      ready: function(){
+        document.addEventListener('iron-select', this.onIronSelect.bind(this));
+
+      },
+
+      onIronSelect: function(e){
+        this.set('route.path', '/' + e.srcElement.selected);
+      }
 
     });
   </script>
