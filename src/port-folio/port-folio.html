@@ -25,7 +25,11 @@
 <link rel="import" href="../../bower_components/app-route/app-route.html">
 
 //ELEMENTS
-<link rel="import" href="../pf-content/pf-content.html">
+<link rel="import" href="../pf-home/pf-home.html">
+<link rel="import" href="../pf-projects/pf-projects.html">
+<link rel="import" href="../pf-education/pf-education.html">
+<link rel="import" href="../pf-pro/pf-pro.html">
+<link rel="import" href="../pf-networks/pf-networks.html">
 
 <dom-module id="port-folio">
   <template>
@@ -35,15 +39,13 @@
       }
     </style>
 
-    <app-location id="location" route="{{route}}"></app-location>
+    <app-location id="location" route="[[route]]"></app-location>
 
-    <app-route id="approute"
-      route="{{route}}"
-      pattern="/:view"
-      data="{{routeData}}"
-      tail="{{subroute}}"></app-route>
-
-
+    <app-route
+    route="{{route}}"
+    pattern="/:view"
+    data="{{routeData}}"
+    tail="{{subroute}}"></app-route>
 
     <paper-drawer-panel>
       <paper-header-panel drawer>
@@ -54,24 +56,24 @@
         </paper-toolbar>
         <paper-listbox selected="{{route.path}}" attr-for-selected="name">
 
-          <paper-item name="home">
+          <paper-item name="home" on-tap="changeTopic">
             <iron-icon icon="home"></iron-icon>
             Home
           </paper-item>
 
-          <paper-item name="projects">
+          <paper-item name="projects" on-tap="changeTopic">
             <iron-icon icon="star"></iron-icon>
             Projects
           </paper-item>
-          <paper-item name="school">
+          <paper-item name="education" on-tap="changeTopic">
             <iron-icon icon="social:school"></iron-icon>
-            School
+            Education
           </paper-item>
-          <paper-item name="work">
+          <paper-item name="pro" on-tap="changeTopic">
             <iron-icon icon="work"></iron-icon>
-            Work experience</paper-item>
+            Professional experience</paper-item>
 
-          <paper-item name="networks">
+          <paper-item name="networks" on-tap="changeTopic">
             <iron-icon icon="social:share"></iron-icon>
             Social networks
           </paper-icon>
@@ -84,9 +86,21 @@
           </paper-icon-button>
           <div class="title">PortFolio</div>
         </paper-toolbar>
-        <pf-content route="{{route}}"></pf-content>
+
+        <iron-pages selected="{{route.path}}" attr-for-selected="name">
+          <pf-home name="home"></pf-home>
+          <pf-projects name="projects"></pf-projects>
+          <pf-education name="education"></pf-education>
+          <pf-pro name="pro"></pf-pro>
+          <pf-networks name="networks"></pf-networks>
+        </iron-pages>
+
       </paper-header-panel>
     </paper-drawer-panel>
+
+
+
+
 
   </template>
 
@@ -105,15 +119,21 @@
           reflectToAttribute: true
         },
 
+        routeData : {
+          type: Object,
+          notify: true,
+          reflectToAttribute: true
+        },
+
+        subroute: {
+          type : Object,
+          notify: true,
+          reflectToAttribute: true
+        }
+
       },
 
-
-      ready: function(){
-        document.addEventListener('iron-select', this.onIronSelect.bind(this));
-
-      },
-
-      onIronSelect: function(e){
+      changeTopic: function(e){
         this.set('route.path', '/' + e.srcElement.selected);
       }
 
