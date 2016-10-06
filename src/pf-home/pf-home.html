@@ -1,14 +1,41 @@
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <dom-module id="pf-home">
 
   <template>
 
-  <style>
+  <style is="custom-style" include="iron-flex iron-flex-alignment">
     :host {
       display: block;
     }
   </style>
 
-    Welcome on the home page
+    <h1>Welcome on my portfolio website</h1>
+
+    <paper-button raised on-tap="collapseWhoIAm">Who I am ?
+      <iron-icon icon="arrow-drop-down"></iron-icon>
+    </paper-button>
+
+    <iron-collapse id="whoIAmCollapse" opened class="horizontal layout">
+
+      <paper-card heading="ID" image="../../resources/profil-pic.jpg">
+        <div class="card-content">
+          <p>Name : Sébastien</p>
+          <p>Surname : Lehmstedt</p>
+          <p>Nationality : French</p>
+          <p>Date of birth : 10/02/1994</p>
+        </div>
+      </paper-card>
+
+      <div class="vertical layout">
+        <p>
+        My name is Sebastien Lehmstedt and I am in engineering school, specialized in computing sciences.
+        My education is mainly algorithm developpement oriented
+        </p>
+        <p>I got a strong interest in entrepreneurship...</p>
+        <p>I also feel passion for japanese language and culture</p>
+      </div>
+
+    </iron-collapse>
 
   </template>
 
@@ -20,6 +47,10 @@
     properties: {
 
     },
+
+    collapseWhoIAm : function(){
+      this.$.whoIAmCollapse.toggle();
+    }
 
   });
 
