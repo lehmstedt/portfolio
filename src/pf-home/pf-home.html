@@ -3,39 +3,83 @@
 
   <template>
 
-  <style is="custom-style" include="iron-flex iron-flex-alignment">
-    :host {
-      display: block;
-    }
-  </style>
+    <style is="custom-style" include="iron-flex iron-flex-alignment">
+      :host {
+        display: block;
+      }
+    </style>
 
-    <h1>Welcome on my portfolio website</h1>
+    <div class="vertical layout">
 
-    <paper-button raised on-tap="collapseWhoIAm">Who I am ?
-      <iron-icon icon="arrow-drop-down"></iron-icon>
-    </paper-button>
+      <h1>Welcome on my portfolio website</h1>
 
-    <iron-collapse id="whoIAmCollapse" opened class="horizontal layout">
+      <paper-button raised on-tap="collapseWhoIAm">Who I am ?
+        <iron-icon icon="arrow-drop-down"></iron-icon>
+      </paper-button>
 
-      <paper-card heading="ID" image="../../resources/profil-pic.jpg">
-        <div class="card-content">
-          <p>Name : Sébastien</p>
-          <p>Surname : Lehmstedt</p>
-          <p>Nationality : French</p>
-          <p>Date of birth : 10/02/1994</p>
+      <iron-collapse id="whoIAmCollapse" opened>
+
+        <div class="horizontal layout">
+
+          <paper-card heading="ID" image="../../resources/profil-pic.jpg">
+            <div class="card-content">
+              <p>Name : Sébastien</p>
+              <p>Surname : Lehmstedt</p>
+              <p>Nationality : French</p>
+              <p>Date of birth : 10/02/1994</p>
+            </div>
+          </paper-card>
+
+          <div class="vertical layout">
+            <p>
+            My name is Sebastien Lehmstedt and I am in engineering school, specialized in computing sciences.
+            My education is mainly algorithm developpement oriented.
+            </p>
+            <p>I got a strong interest in entrepreneurship, and that is why I took part in <strong>Les Entrepreneuriales</strong> program.
+            This allow a pluridisciplinar student team to simulate a company launch.
+            You can check out for more details about my experience in the projects section</p>
+
+            <p>I also feel passionnated for japanese language and culture.
+            I went to Japan for two months, where I participated to courses and worked in a hotel.
+            You will see more of this experience in the professional experience section.</p>
+          </div>
+
         </div>
-      </paper-card>
 
-      <div class="vertical layout">
-        <p>
-        My name is Sebastien Lehmstedt and I am in engineering school, specialized in computing sciences.
-        My education is mainly algorithm developpement oriented
+      </iron-collapse>
+
+      <paper-button raised on-tap="collapseWhatIAmLookingFor">What I am looking for
+        <iron-icon icon="arrow-drop-down"></iron-icon>
+      </paper-button>
+
+      <iron-collapse id="whatIAmLookingForCollapse">
+
+        <p>In order to graduate in 2017, I need to do an six month internship in a company.
+        I am interested in the virtual reality, and web development field.
+        I would like to get hired in a team where I can express my will to collaborate in order to develop a project,
+        and where I can learn from the most experienced ones.
         </p>
-        <p>I got a strong interest in entrepreneurship...</p>
-        <p>I also feel passion for japanese language and culture</p>
-      </div>
 
-    </iron-collapse>
+      </iron-collapse>
+
+      <paper-button raised on-tap="collapseWhatCanIBringToYourCompany">
+        What can I bring to your company
+        <iron-icon icon="arrow-drop-down"></ron-icon>
+      </paper-button>
+
+      <iron-collapse id="whatCanIBringToYourCompanyCollapse">
+
+        <p>I am getting experienced in web development, so I can design the full stack of a website, from the front-end to the back office.
+        I also have moderate skills in databases administration.</p>
+        <p>I have already made virtual reality projects, and used Oculus for that purpose. I am also familiar with Unity3D.</p>
+        <p>My last internship experience showed that I am able to handle sensitive situations, like client data integrity control,
+        or fixing issues in a small lap of time. My autonomy can be an advantage, especially in an start-up context. I am also able
+        to learn new concepts, programmation languages or software.
+      </iron-collapse>
+
+      <h2>If you want to see what I actually do, you can see the projects where I was involved in the projects section</h2>
+
+    </div>
 
   </template>
 
@@ -50,7 +94,15 @@
 
     collapseWhoIAm : function(){
       this.$.whoIAmCollapse.toggle();
-    }
+    },
+
+    collapseWhatIAmLookingFor: function(){
+      this.$.whatIAmLookingForCollapse.toggle();
+    },
+
+    collapseWhatCanIBringToYourCompany: function(){
+      this.$.whatCanIBringToYourCompanyCollapse.toggle();
+    },
 
   });
 
