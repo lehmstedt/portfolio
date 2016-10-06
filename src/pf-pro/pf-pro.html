@@ -2,13 +2,35 @@
 
   <template>
 
-  <style>
-    :host {
-      display: block;
-    }
-  </style>
+    <style is="custom-style" include="iron-flex iron-flex-alignment">
+      :host {
+        display: block;
+      }
+    </style>
 
-    Welcome on the professional experience page
+    <div class="vertical layout">
+
+      <h1>Professional experience</h1>
+
+      <paper-button raised on-tap="collapseSfdn">
+        SFDN Internship
+        <iron-icon icon="arrow-drop-down"></iron-icon>
+      </paper-button>
+
+      <iron-collapse id="sfdnCollapse" opened>
+        <h2>April 2016 - August 2016</h2>
+      </iron-collapse>
+
+      <paper-button raised on-tap="collapseJapan">
+        Japan experience
+        <iron-icon icon="arrow-drop-down"></iron-icon>
+      </paper-button>
+
+      <iron-collapse id="japanCollapse">
+        <h2>July 2015 - August 2015</h2>
+      </iron-collapse>
+
+    </div>
 
   </template>
 
@@ -19,6 +41,14 @@
 
     properties: {
 
+    },
+
+    collapseSfdn: function(){
+      this.$.sfdnCollapse.toggle();
+    },
+
+    collapseJapan: function(){
+      this.$.japanCollapse.toggle();
     },
   });
 
