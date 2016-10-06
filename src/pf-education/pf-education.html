@@ -2,13 +2,35 @@
 
   <template>
 
-  <style>
-    :host {
-      display: block;
-    }
-  </style>
+    <style is="custom-style" include="iron-flex iron-flex-alignment">
+      :host {
+        display: block;
+      }
+    </style>
 
-    Welcome on the education page
+    <div class="vertical layout">
+
+      <h1>Education</h1>
+
+      <paper-button raised on-tap="collapseEsiea">
+        ESIEA
+        <iron-icon icon="arrow-drop-down"></iron-icon>
+      </paper-button>
+
+      <iron-collapse id="esieaCollapse" opened>
+        <h2>2011 - 2017</h2>
+      </iron-collapse>
+
+      <paper-button raised on-tap="collapseBac">
+        Baccalaureate
+        <iron-icon icon="arrow-drop-down"></iron-icon>
+      </paper-button>
+
+      <iron-collapse id="bacCollapse">
+        <h2>2011</h2>
+      </iron-collapse>
+
+    </div>
 
   </template>
 
@@ -19,6 +41,14 @@
 
     properties: {
 
+    },
+
+    collapseEsiea: function(){
+      this.$.esieaCollapse.toggle();
+    },
+
+    collapseBac: function(){
+      this.$.bacCollapse.toggle();
     },
   });
 
