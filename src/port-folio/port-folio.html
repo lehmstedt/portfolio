@@ -10,6 +10,8 @@
 <link rel="import" href="../../bower_components/paper-material/paper-material.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/paper-badge/paper-badge.html">
+<link rel="import" href="../../bower_components/paper-toggle-button/paper-toggle-button.html">
 
 //IRON
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
@@ -36,7 +38,8 @@
     <style is="custom-style" include="iron-flex iron-flex-alignment">
       :host {
         display: block;
-      }
+      },
+
     </style>
 
     <iron-localstorage name="localstorage"
@@ -62,29 +65,33 @@
 
           <paper-item name="home" on-tap="changeTopic">
             <iron-icon icon="home"></iron-icon>
-            Home
+            <span>Home</span>
           </paper-item>
 
           <paper-item name="projects" on-tap="changeTopic">
             <iron-icon icon="star"></iron-icon>
-            Projects
+            <span id="projects">Projects</span>
+            <paper-badge for="projects" label="6"></paper-badge>
           </paper-item>
           <paper-item name="education" on-tap="changeTopic">
             <iron-icon icon="social:school"></iron-icon>
-            Education
+            <span id="education">Education</span>
+            <paper-badge for="education" label="2"></paper-badge>
           </paper-item>
           <paper-item name="pro" on-tap="changeTopic">
             <iron-icon icon="work"></iron-icon>
-            Professional experience</paper-item>
+            <span id="pro">Professional experience</span>
+            <paper-badge for="pro" label="2"></paper-badge>
+          </paper-item>
 
           <paper-item name="networks" on-tap="changeTopic">
             <iron-icon icon="social:share"></iron-icon>
             Social networks
-          </paper-icon>
+          </paper-item>
         </paper-listbox>
       </paper-header-panel>
 
-      <paper-scroll-header-panel main condenses keep-condensed-header>
+      <paper-header-panel main>
         <paper-toolbar class="medium-tall">
           <paper-icon-button icon="menu" paper-drawer-toggle>
           </paper-icon-button>
@@ -99,7 +106,7 @@
           <pf-networks name="networks"></pf-networks>
         </iron-pages>
 
-      </paper-scroll-header-panel>
+      </paper-header-panel>
     </paper-drawer-panel>
 
 

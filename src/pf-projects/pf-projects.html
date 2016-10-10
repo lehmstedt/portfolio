@@ -5,111 +5,135 @@
   <style is="custom-style" include="iron-flex iron-flex-alignment">
     :host {
       display: block;
+      margin: 20px;
+    }
+
+  </style>
+
+  <style>
+    paper-card {
+      width: 40%;
+      margin: 20px;
     }
   </style>
 
-    <div class="vertical layout">
 
       <h1>Projects</h1>
 
-      <paper-button raised on-tap="collapseVr3dBuilder">
-        VR 3D Builder
-        <iron-icon icon="arrow-drop-down"></iron-icon>
-      </paper-button>
+      <paper-card heading="VR 3D Builder" elevation="2" image="../resources/vive.png">
+        <div class="card-content">
+          <div class="card-actions">
+            <paper-toggle-button checked="{{collapseVr3dBuilder}}">See all</paper-toggle-button>
+          </div>
+          <h2>Coming soon...</h2>
+          <p>3D castle builder with Unity3D, HTC Vive compatible</p>
 
-      <iron-collapse id="vr3dBuilderCollapse" opened>
-        <h2>Coming soon...</h2>
+          <iron-collapse id="vr3dBuilderCollapse" opened="{{collapseVr3dBuilder}}">
 
-        <p>With a student team from <strong>ESIEA</strong>, we will develop a <strong>3D castle builder</strong> using <strong>Unity3D</strong> and <strong>HTC Vive</strong> compatible.
-        At the end, the goal is to add interaction like protecting the castle against enemies, for example.
-        Please come back a little bit later in order to get news about this project !
-        </p>
-      </iron-collapse>
-
-      <paper-button raised on-tap="collapsePortfolio">
-        PortFolio
-        <iron-icon icon="arrow-drop-down"></iron-icon>
-      </paper-button>
-
-      <iron-collapse id="portfolioCollapse" opened>
-        <h2>October 2016 - Now</h2>
-        <p><strong>This is indeed the actual website you are using right now.</strong> For me, it is a real project, because
-        I took the challenge to use <strong>Polymer</strong>, a Google framework, in order to quickly develop a stable website, instead
-        of just set up a Wordpress.
-        </p>
-
-        <h3>What is Polymer ?</h3>
-        <p>This is a web components based framework designed by a Google team</p>
-        <p><strong>What is important to keep in mind about this framework ?</strong></p>
-        <ul>
-          <li><h4>The Material Design</h4>
-            <p>This is the Google graphical charter, allowing a unique and clean design.
-            You can see the official documentation <a href="https://material.google.com/" target="_blank">here</a>
+            <p>With a student team from <strong>ESIEA</strong>, we will develop a <strong>3D castle builder</strong> using <strong>Unity3D</strong> and <strong>HTC Vive</strong> compatible.
+            At the end, the goal is to add interaction like protecting the castle against enemies, for example.
+            Please come back a little bit later in order to get news about this project !
             </p>
-          </li>
+          </iron-collapse>
+        </div>
 
-          <li><h4>The web components compatibility</h4>
-            <p>Google bet the web components will be the next standard for the web.
-            According to this statement, Polymer is trying to use the maximum of the concept of web components.
-            Obvously, a new standard means an great cross-browser compatibility.
-            You can get more informations about web components on the <a href="http://webcomponents.org/" target="_blank">Official website</a>
+      </paper-card>
+
+      <paper-card heading="Portfolio" elevation="2" image="../resources/polymer-logo.png">
+        <div class="card-actions">
+          <paper-toggle-button checked="{{collapsePortfolio}}">See all</paper-toggle-button>
+        </div>
+        <div class="content">
+          <h2>October 2016 - Now</h2>
+
+          <iron-collapse id="portfolioCollapse" opened="{{collapsePortfolio}}">
+
+            <p><strong>This is indeed the actual website you are using right now.</strong> For me, it is a real project, because
+            I took the challenge to use <strong>Polymer</strong>, a Google framework, in order to quickly develop a stable website, instead
+            of just set up a Wordpress.
             </p>
-          </li>
-        </ul>
 
-        <h3>Why using Polymer ?</h3>
-        <p>
-        Indeed, Polymer is quite good if you want a clean and stable appareance for your website. Then, it is a good solution
-        to make this website easily sustainable. Actually, this portfolio is only a matter of HTML, CSS and JavaScript for now,
-        but this is because I wanted to quickly set up my portfolio. In the future, I plan to migrate the hard-coded data of this
-        to a database. At this point, the powerness of Polymer will make sense in this context.
-        </p>
+            <h3>What is Polymer ?</h3>
+            <p>This is a web components based framework designed by a Google team</p>
+            <p><strong>What is important to keep in mind about this framework ?</strong></p>
+            <ul>
+              <li><h4>The Material Design</h4>
+                <p>This is the Google graphical charter, allowing a unique and clean design.
+                You can see the official documentation <a href="https://material.google.com/" target="_blank">here</a>
+                </p>
+              </li>
 
-        <p>I took me only one week to set up and build the global structure of this website. You can see below the git trace of this project</p>
+              <li><h4>The web components compatibility</h4>
+                <p>Google bet the web components will be the next standard for the web.
+                According to this statement, Polymer is trying to use the maximum of the concept of web components.
+                Obvously, a new standard means an great cross-browser compatibility.
+                You can get more informations about web components on the <a href="http://webcomponents.org/" target="_blank">Official website</a>
+                </p>
+              </li>
+            </ul>
 
-        <paper-card heading="Git trace" image="../../resources/git-trace.png">
-        </paper-card>
-      </iron-collapse>
+            <h3>Why using Polymer ?</h3>
+            <p>
+            Indeed, Polymer is quite good if you want a clean and stable appareance for your website. Then, it is a good solution
+            to make this website easily sustainable. Actually, this portfolio is only a matter of HTML, CSS and JavaScript for now,
+            but this is because I wanted to quickly set up my portfolio. In the future, I plan to migrate the hard-coded data of this
+            to a database. At this point, the powerness of Polymer will make sense in this context.
+            </p>
 
-      <paper-button raised on-tap="collapseMonCoachLegumes">
-        Mon Coach Légumes administration console
-        <iron-icon icon="arrow-drop-down"></iron-icon>
-      </paper-button>
+            <p>I took me only one week to set up and build the global structure of this website. You can see below the git trace of this project</p>
 
-      <iron-collapse id="MonCoachLegumesCollapse">
-        <h2>April 2016 - August 2016</h2>
+            <paper-card heading="Git trace" image="../../resources/git-trace.png">
+            </paper-card>
+          </iron-collapse>
+        </div>
+      </paper-card>
 
-        <h3>What is Mon Coach Légumes ?</h3>
+      <paper-card heading="Administration console" elevation="2" image="../resources/mcl-console.png">
+        <div class="card-actions">
+          <paper-toggle-button checked="{{collapseMonCoachLegumes}}">See all</paper-toggle-button>
+        </div>
+        <div class="card-content">
+          <h2>April 2016 - August 2016</h2>
 
-        <p>Mon Coach Légumes is a service giving everyone the chance to be coached in the field of growing vegetables and fruits.
-        The concept is quite simple : while you a taking care of a virtual vegetable garden, you can do the same for real, and
-        get an amount of useful advices, like the plantation periods, the compatibility between vegetables, when water your products...
-        You get everything in order to make your vegetable garden a success !
-        </p>
-
-        <paper-card heading="Mon Coach Légumes home page" image="../../resources/mon-coach-legumes-home.png">
-        </paper-card>
-
-        <p>This is a website built with Polymer. So it is a Material Design website having all the qualities we discussed in the Portfolio project section</p>
-
-        <paper-card heading="Mon Coach Légumes garden page" image="../../resources/mon-coach-legumes-garden.png">
-        </paper-card>
-
-        <h3>The administration console</h3>
-
-        <p>Mon Coach Légumes was a project launched by <strong>Maison et Services</strong></p>
+          <iron-collapse id="MonCoachLegumesCollapse" opened="{{collapseMonCoachLegumes}}">
 
 
-      </iron-collapse>
+            <h3>What is Mon Coach Légumes ?</h3>
 
-      <paper-button raised on-tap="collapseForum">
-        Forum
-        <iron-icon icon="arrow-drop-down"></iron-icon>
-      </paper-button>
+            <p>Mon Coach Légumes is a service giving everyone the chance to be coached in the field of growing vegetables and fruits.
+            The concept is quite simple : while you a taking care of a virtual vegetable garden, you can do the same for real, and
+            get an amount of useful advices, like the plantation periods, the compatibility between vegetables, when water your products...
+            You get everything in order to make your vegetable garden a success !
+            </p>
 
-      <iron-collapse id="forumCollapse">
-        <h2>October 2015 - December 2015</h2>
-      </iron-collapse>
+            <paper-card heading="Mon Coach Légumes home page" image="../../resources/mon-coach-legumes-home.png">
+            </paper-card>
+
+            <p>This is a website built with Polymer. So it is a Material Design website having all the qualities we discussed in the Portfolio project section</p>
+
+            <paper-card heading="Mon Coach Légumes garden page" image="../../resources/mon-coach-legumes-garden.png">
+            </paper-card>
+
+            <h3>The administration console</h3>
+
+            <p>Mon Coach Légumes was a project launched by <strong>Maison et Services</strong></p>
+
+          </iron-collapse>
+        </div>
+      </paper-card>
+
+      <paper-card heading="Forum" elevation="2">
+        <div class="card-actions">
+          <paper-toggle-button checked="{{collapseForum}}">See all</paper-toggle-button>
+        </div>
+        <div class="card-content">
+          <h2>October 2015 - December 2015</h2>
+
+          <iron-collapse id="forumCollapse" opened="{{collapseForum}}">
+            MVC design pattern forum
+          </iron-collapse>
+        </div>
+      </paper-card>
 
       <paper-button raised on-tap="collapseNumericTable">
         Numeric Table
@@ -129,7 +153,6 @@
         <h2>November 2014 - March 2015</h2>
       </iron-collapse>
 
-    </div>
 
 
   </template>
@@ -161,10 +184,6 @@
 
     collapseImmersionNomade: function(){
       this.$.immersionNomadeCollapse.toggle();
-    },
-
-    collapseVr3dBuilder: function(){
-      this.$.vr3dBuilderCollapse.toggle();
     },
   });
 
