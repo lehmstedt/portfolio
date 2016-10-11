@@ -1,0 +1,39 @@
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+
+<dom-module id="pf-dialog">
+
+  <template>
+
+    <style is="custom-style" include="iron-flex iron-flex-alignment">
+      :host {
+        display: block;
+      }
+
+    </style>
+
+    <paper-dialog id="dialog">
+      <iron-image id="image"></iron-image>
+      <paper-button dialog-dismiss>Back</paper-button>
+    </paper-dialog>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'pf-dialog',
+
+      properties: {
+
+      },
+
+      open: function(imageSrc){
+        this.$.image.src = imageSrc;
+        this.$.dialog.open();
+      }
+
+    });
+  </script>
+
+</dom-module>

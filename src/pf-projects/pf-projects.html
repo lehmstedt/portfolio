@@ -16,7 +16,9 @@
       margin: 20px;
       padding: 20px;
     }
+
   </style>
+
 
   <style is="custom-style">
     paper-card.white {
@@ -25,6 +27,9 @@
   </style>
 
   <app-location route="{{route}}"></app-location>
+
+  <pf-dialog id="pfDialog"></pf-dialog>
+
 
       <paper-card heading="VR 3D Builder" elevation="2" image="../resources/vive.png">
         <div class="card-content">
@@ -90,13 +95,13 @@
 
             <p>I took me only one week to set up and build the global structure of this website. You can see below the git trace of this project</p>
 
-            <paper-card heading="Git trace" image="../../resources/git-trace.png">
-            </paper-card>
+            <iron-image src="../../resources/git-trace-small.png" on-tap="openDialog"></iron-image>
           </iron-collapse>
         </div>
       </paper-card>
 
-      <paper-card heading="Administration console" elevation="2" image="../resources/mcl-console.png">
+      <paper-card elevation="2" image="../resources/mcl-console.png">
+        <h2>Administration console</h2>
         <div class="card-actions">
           <paper-toggle-button checked="{{collapseMonCoachLegumes}}">See all</paper-toggle-button>
         </div>
@@ -118,12 +123,14 @@
             You get everything in order to make your vegetable garden a success !
             </p>
 
-            <paper-card heading="Mon Coach Légumes home page" image="../../resources/mon-coach-legumes-home.png">
+            <paper-card image="../../resources/mon-coach-legumes-home.png" on-tap="openDialog">
+              <h5>Mon Coach Légumes home page</h5>
             </paper-card>
 
             <p>This is a website built with Polymer. So it is a Material Design website having all the qualities we discussed in the Portfolio project section</p>
 
-            <paper-card heading="Mon Coach Légumes garden page" image="../../resources/mon-coach-legumes-garden.png">
+            <paper-card image="../../resources/mon-coach-legumes-garden.png">
+              <h5>Mon Coach Légumes garden page</h5>
             </paper-card>
 
             <h3>The administration console</h3>
@@ -195,6 +202,11 @@
     properties: {
 
     },
+
+    openDialog: function(e){
+      console.log(e.srcElement);
+      this.$.pfDialog.open(e.srcElement.src.replace('-small', ''));
+    }
 
   });
 
