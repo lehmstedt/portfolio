@@ -8,29 +8,42 @@
       }
     </style>
 
-    <div class="vertical layout">
+    <style>
+      paper-card {
+        width: 40%;
+        margin: 20px;
+        padding: 20px;
+      }
+    </style>
 
-      <h1>Education</h1>
 
-      <paper-button raised on-tap="collapseEsiea">
-        ESIEA
-        <iron-icon icon="arrow-drop-down"></iron-icon>
-      </paper-button>
+    <h1>Education</h1>
 
-      <iron-collapse id="esieaCollapse" opened>
+    <paper-card heading="ESIEA" elevation="2" image="../resources/esiea-logo.png">
+      <div class="card-actions">
+        <paper-toggle-button checked="{{collapseEsiea}}">See all</paper-toggle-button>
+      </div>
+      <div class="card-content">
         <h2>2011 - 2017</h2>
-      </iron-collapse>
 
-      <paper-button raised on-tap="collapseBac">
-        Baccalaureate
-        <iron-icon icon="arrow-drop-down"></iron-icon>
-      </paper-button>
+        <iron-collapse opened="{{collapseEsiea}}">
+          Virtual reality specialization
+        </iron-collapse>
+      </div>
+    </paper-card>
 
-      <iron-collapse id="bacCollapse">
+    <paper-card heading="Baccalaureate" elevation="2" image="../resources/rousseau.jpg">
+      <div class="card-actions">
+        <paper-toggle-button checked="{{collapseBac}}">See all</paper-toggle-button>
+      </div>
+      <div class="card-content">
         <h2>2011</h2>
-      </iron-collapse>
 
-    </div>
+        <iron-collapse opened="{{collapseBac}}">
+          Lycée Douanier Rousseau Laval
+        </iron-collapse>
+      </div>
+    </paper-card>
 
   </template>
 
@@ -43,13 +56,6 @@
 
     },
 
-    collapseEsiea: function(){
-      this.$.esieaCollapse.toggle();
-    },
-
-    collapseBac: function(){
-      this.$.bacCollapse.toggle();
-    },
   });
 
   </script>

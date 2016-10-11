@@ -8,29 +8,57 @@
       }
     </style>
 
-    <div class="vertical layout">
+    <style>
+      paper-card {
+        width: 40%;
+        margin: 20px;
+        padding: 20px;
+      }
+    </style>
 
-      <h1>Professional experience</h1>
+    <h1>Professional experience</h1>
 
-      <paper-button raised on-tap="collapseSfdn">
-        SFDN Internship
-        <iron-icon icon="arrow-drop-down"></iron-icon>
-      </paper-button>
-
-      <iron-collapse id="sfdnCollapse" opened>
+    <paper-card heading="SFDN internship" elevation="2" image="../resources/sfdn-logo.png">
+      <div class="card-actions">
+        <paper-toggle-button checked="{{collapseSfdn}}">See all</paper-toggle-button>
+      </div>
+      <div class="card-content">
         <h2>April 2016 - August 2016</h2>
-      </iron-collapse>
 
-      <paper-button raised on-tap="collapseJapan">
-        Japan experience
-        <iron-icon icon="arrow-drop-down"></iron-icon>
-      </paper-button>
+        <iron-collapse opened="{{collapseSfdn}}">
+          <p>A six months internship in web development</p>
+        </iron-collapse>
 
-      <iron-collapse id="japanCollapse">
+      </div>
+    </paper-card>
+
+    <paper-card heading="Japan experience" elevation="2" image="../resources/japan.jpg">
+      <div class="card-actions">
+        <paper-toggle-button checked="{{collapseJapan}}">See all</paper-toggle-button>
+      </div>
+      <div class="card-content">
         <h2>July 2015 - August 2015</h2>
-      </iron-collapse>
 
-    </div>
+        <iron-collapse opened="{{collapseJapan}}">
+          <p>A two months journey to Japan including courses and work</p>
+        </iron-collapse>
+
+      </div>
+    </paper-card>
+
+    <paper-card heading="Les entrepreneuriales" elevation="2" image="../resources/les-entrepreneuriales-logo.jpg">
+      <div class="card-actions">
+        <paper-toggle-button checked="{{collapseEntrep}}">See all</paper-toggle-button>
+      </div>
+      <div class="card-content">
+        <h2>November 2014 - March 2015</h2>
+
+        <iron-collapse opened="{{collapseEntrep}}">
+          <p>My participation to Les entrepreneuriales 2015</p>
+        </iron-collapse>
+      </div>
+    </paper-card>
+
 
   </template>
 
@@ -43,13 +71,6 @@
 
     },
 
-    collapseSfdn: function(){
-      this.$.sfdnCollapse.toggle();
-    },
-
-    collapseJapan: function(){
-      this.$.japanCollapse.toggle();
-    },
   });
 
   </script>

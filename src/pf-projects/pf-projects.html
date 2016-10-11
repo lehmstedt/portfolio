@@ -5,7 +5,6 @@
   <style is="custom-style" include="iron-flex iron-flex-alignment">
     :host {
       display: block;
-      margin: 20px;
     }
 
   </style>
@@ -14,7 +13,14 @@
     paper-card {
       width: 40%;
       margin: 20px;
+      padding: 20px;
     }
+  </style>
+
+  <style is="custom-style">
+    paper-card.white {
+      --paper-card-header-color: #fff;
+    };
   </style>
 
 
@@ -28,7 +34,7 @@
           <h2>Coming soon...</h2>
           <p>3D castle builder with Unity3D, HTC Vive compatible</p>
 
-          <iron-collapse id="vr3dBuilderCollapse" opened="{{collapseVr3dBuilder}}">
+          <iron-collapse opened="{{collapseVr3dBuilder}}">
 
             <p>With a student team from <strong>ESIEA</strong>, we will develop a <strong>3D castle builder</strong> using <strong>Unity3D</strong> and <strong>HTC Vive</strong> compatible.
             At the end, the goal is to add interaction like protecting the castle against enemies, for example.
@@ -46,7 +52,7 @@
         <div class="content">
           <h2>October 2016 - Now</h2>
 
-          <iron-collapse id="portfolioCollapse" opened="{{collapsePortfolio}}">
+          <iron-collapse opened="{{collapsePortfolio}}">
 
             <p><strong>This is indeed the actual website you are using right now.</strong> For me, it is a real project, because
             I took the challenge to use <strong>Polymer</strong>, a Google framework, in order to quickly develop a stable website, instead
@@ -95,7 +101,7 @@
         <div class="card-content">
           <h2>April 2016 - August 2016</h2>
 
-          <iron-collapse id="MonCoachLegumesCollapse" opened="{{collapseMonCoachLegumes}}">
+          <iron-collapse opened="{{collapseMonCoachLegumes}}">
 
 
             <h3>What is Mon Coach Légumes ?</h3>
@@ -122,38 +128,44 @@
         </div>
       </paper-card>
 
-      <paper-card heading="Forum" elevation="2">
+      <paper-card heading="Forum" elevation="2" image="../resources/forum.png" class="white">
         <div class="card-actions">
           <paper-toggle-button checked="{{collapseForum}}">See all</paper-toggle-button>
         </div>
         <div class="card-content">
           <h2>October 2015 - December 2015</h2>
 
-          <iron-collapse id="forumCollapse" opened="{{collapseForum}}">
+          <iron-collapse opened="{{collapseForum}}">
             MVC design pattern forum
           </iron-collapse>
         </div>
       </paper-card>
 
-      <paper-button raised on-tap="collapseNumericTable">
-        Numeric Table
-        <iron-icon icon="arrow-drop-down"></iron-icon>
-      </paper-button>
+      <paper-card heading="Numeric Table" elevation="2" image="../resources/numeric-table.jpg">
+        <div class="card-actions">
+          <paper-toggle-button checked="{{collapseNumericTable}}">See all</paper-toggle-button>
+        </div>
+        <div class="card-content">
+          <h2>September 2015 - June 2015</h2>
 
-      <iron-collapse id="numericTableCollapse">
-        <h2>September 2015 - June 2015</h2>
-      </iron-collapse>
+          <iron-collapse opened="{{collapseNumericTable}}">
+            <p>Numeric table with RFID for the Laval Museum</p>
+          </iron-collapse>
+        </div>
+      </paper-card>
 
-      <paper-button raised on-tap="collapseImmersionNomade">
-        Immersion Nomade
-        <iron-icon icon="arrow-drop-down"></iron-icon>
-      </paper-button>
+      <paper-card heading="Immersion Nomade" elevation="2" image="../resources/immersion-nomade.png">
+        <div class="card-actions">
+          <paper-toggle-button checked="{{collapseImmersionNomade}}">See all</paper-toggle-button>
+        </div>
+        <div class="card-content">
+          <h2>November 2014 - March 2015</h2>
 
-      <iron-collapse id="immersionNomadeCollapse">
-        <h2>November 2014 - March 2015</h2>
-      </iron-collapse>
-
-
+          <iron-collapse opened="{{collapseImmersionNomade}}">
+            <p>Team Building VR project for Les Entrepreneuriales</p>
+          </iron-collapse>
+        </div>
+      </paper-card>
 
   </template>
 
@@ -166,25 +178,6 @@
 
     },
 
-    collapsePortfolio: function(){
-      this.$.portfolioCollapse.toggle();
-    },
-
-    collapseMonCoachLegumes: function(){
-      this.$.MonCoachLegumesCollapse.toggle();
-    },
-
-    collapseForum: function(){
-      this.$.forumCollapse.toggle();
-    },
-
-    collapseNumericTable: function(){
-      this.$.numericTableCollapse.toggle();
-    },
-
-    collapseImmersionNomade: function(){
-      this.$.immersionNomadeCollapse.toggle();
-    },
   });
 
   </script>

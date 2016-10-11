@@ -1,5 +1,6 @@
 //PAPER
 <link rel="import" href="../../bower_components/paper-styles/demo-pages.html">
+<link rel="import" href="../../bower_components/paper-styles/color.html">
 <link rel="import" href="../../bower_components/paper-toolbar/paper-toolbar.html">
 <link rel="import" href="../../bower_components/paper-drawer-panel/paper-drawer-panel.html">
 <link rel="import" href="../../bower_components/paper-header-panel/paper-header-panel.html">
@@ -54,60 +55,65 @@
     data="{{routeData}}"
     tail="{{subroute}}"></app-route>
 
-    <paper-drawer-panel>
-      <paper-header-panel drawer>
-        <paper-toolbar class="small">
-          <div class="title">Topics</div>
-          <paper-icon-button icon="arrow-back" paper-drawer-toggle>
-          </paper-icon-button>
-        </paper-toolbar>
-        <paper-listbox selected="{{route.path}}" attr-for-selected="name">
+    <body class="fullbleed layout vertical">
 
-          <paper-item name="home" on-tap="changeTopic">
-            <iron-icon icon="home"></iron-icon>
-            <span>Home</span>
-          </paper-item>
+      <paper-drawer-panel>
+        <paper-header-panel id="header-panel" drawer class="flex">
+          <paper-toolbar class="small">
+            <div class="title">Topics</div>
+            <paper-icon-button icon="arrow-back" paper-drawer-toggle>
+            </paper-icon-button>
+          </paper-toolbar>
 
-          <paper-item name="projects" on-tap="changeTopic">
-            <iron-icon icon="star"></iron-icon>
-            <span id="projects">Projects</span>
-            <paper-badge for="projects" label="6"></paper-badge>
-          </paper-item>
-          <paper-item name="education" on-tap="changeTopic">
-            <iron-icon icon="social:school"></iron-icon>
-            <span id="education">Education</span>
-            <paper-badge for="education" label="2"></paper-badge>
-          </paper-item>
-          <paper-item name="pro" on-tap="changeTopic">
-            <iron-icon icon="work"></iron-icon>
-            <span id="pro">Professional experience</span>
-            <paper-badge for="pro" label="2"></paper-badge>
-          </paper-item>
+          <paper-listbox selected="{{route.path}}" attr-for-selected="name">
 
-          <paper-item name="networks" on-tap="changeTopic">
-            <iron-icon icon="social:share"></iron-icon>
-            Social networks
-          </paper-item>
-        </paper-listbox>
-      </paper-header-panel>
+            <paper-item name="home" on-tap="changeTopic">
+              <iron-icon icon="home"></iron-icon>
+              <span>Home</span>
+            </paper-item>
 
-      <paper-header-panel main>
-        <paper-toolbar class="medium-tall">
-          <paper-icon-button icon="menu" paper-drawer-toggle>
-          </paper-icon-button>
-          <div class="title">PortFolio</div>
-        </paper-toolbar>
+            <paper-item name="projects" on-tap="changeTopic">
+              <iron-icon icon="star"></iron-icon>
+              <span id="projects">Projects</span>
+              <paper-badge for="projects" label="6"></paper-badge>
+            </paper-item>
+            <paper-item name="education" on-tap="changeTopic">
+              <iron-icon icon="social:school"></iron-icon>
+              <span id="education">Education</span>
+              <paper-badge for="education" label="2"></paper-badge>
+            </paper-item>
+            <paper-item name="pro" on-tap="changeTopic">
+              <iron-icon icon="work"></iron-icon>
+              <span id="pro">Professional experience</span>
+              <paper-badge for="pro" label="3"></paper-badge>
+            </paper-item>
 
-        <iron-pages selected="{{route.path}}" attr-for-selected="name" fallback-selection="home">
-          <pf-home name="home"></pf-home>
-          <pf-projects name="projects"></pf-projects>
-          <pf-education name="education"></pf-education>
-          <pf-pro name="pro"></pf-pro>
-          <pf-networks name="networks"></pf-networks>
-        </iron-pages>
+            <paper-item name="networks" on-tap="changeTopic">
+              <iron-icon icon="social:share"></iron-icon>
+              Social networks
+            </paper-item>
+          </paper-listbox>
+        </paper-header-panel>
 
-      </paper-header-panel>
-    </paper-drawer-panel>
+        <paper-header-panel main>
+          <paper-toolbar>
+            <paper-icon-button icon="menu" paper-drawer-toggle>
+            </paper-icon-button>
+            <div class="title">PortFolio</div>
+          </paper-toolbar>
+
+          <iron-pages selected="{{route.path}}" attr-for-selected="name" fallback-selection="home">
+            <pf-home name="home"></pf-home>
+            <pf-projects name="projects"></pf-projects>
+            <pf-education name="education"></pf-education>
+            <pf-pro name="pro"></pf-pro>
+            <pf-networks name="networks"></pf-networks>
+          </iron-pages>
+
+        </paper-header-panel>
+      </paper-drawer-panel>
+
+    </body>
 
 
 
