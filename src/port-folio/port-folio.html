@@ -36,16 +36,18 @@
 
 <dom-module id="port-folio">
   <template>
-    <style is="custom-style" include="iron-flex iron-flex-alignment">
+    <style is="custom-style" include="iron-flex iron-flex-alignment iron-positioning">
       :host {
         display: block;
       },
 
     </style>
 
-    <iron-localstorage name="localstorage"
-      value="{{route.path}}">
-    </iron-localstorage>
+    <style>
+
+    </style>
+
+    <iron-localstorage id="localstorage" value="{{route.path}}"></iron-localstorage>
 
     <app-location id="location" route="[[route]]"></app-location>
 
@@ -59,40 +61,45 @@
 
       <paper-drawer-panel>
         <paper-header-panel id="header-panel" drawer class="flex">
-          <paper-toolbar class="small">
-            <div class="title">Topics</div>
-            <paper-icon-button icon="arrow-back" paper-drawer-toggle>
-            </paper-icon-button>
-          </paper-toolbar>
 
-          <paper-listbox selected="{{route.path}}" attr-for-selected="name">
+            <paper-toolbar class="small">
+              <paper-icon-button icon="arrow-back" paper-drawer-toggle>
+              </paper-icon-button>
+            </paper-toolbar>
 
-            <paper-item name="home" on-tap="changeTopic">
-              <iron-icon icon="home"></iron-icon>
-              <span>Home</span>
-            </paper-item>
 
-            <paper-item name="projects" on-tap="changeTopic">
-              <iron-icon icon="star"></iron-icon>
-              <span id="projects">Projects</span>
-              <paper-badge for="projects" label="6"></paper-badge>
-            </paper-item>
-            <paper-item name="education" on-tap="changeTopic">
-              <iron-icon icon="social:school"></iron-icon>
-              <span id="education">Education</span>
-              <paper-badge for="education" label="2"></paper-badge>
-            </paper-item>
-            <paper-item name="pro" on-tap="changeTopic">
-              <iron-icon icon="work"></iron-icon>
-              <span id="pro">Professional experience</span>
-              <paper-badge for="pro" label="3"></paper-badge>
-            </paper-item>
+            <paper-card heading="Topics" elevation="2" style="height: 100%;">
 
-            <paper-item name="networks" on-tap="changeTopic">
-              <iron-icon icon="social:share"></iron-icon>
-              Social networks
-            </paper-item>
-          </paper-listbox>
+            <paper-listbox selected="{{route.path}}" attr-for-selected="name">
+
+              <paper-item name="home" on-tap="changeTopic">
+                <iron-icon icon="home"></iron-icon>
+                <span>Home</span>
+              </paper-item>
+
+              <paper-item name="projects" on-tap="changeTopic">
+                <iron-icon icon="star"></iron-icon>
+                <span id="projects">Projects</span>
+                <paper-badge for="projects" label="6"></paper-badge>
+              </paper-item>
+              <paper-item name="education" on-tap="changeTopic">
+                <iron-icon icon="social:school"></iron-icon>
+                <span id="education">Education</span>
+                <paper-badge for="education" label="2"></paper-badge>
+              </paper-item>
+              <paper-item name="pro" on-tap="changeTopic">
+                <iron-icon icon="work"></iron-icon>
+                <span id="pro">Professional experience</span>
+                <paper-badge for="pro" label="3"></paper-badge>
+              </paper-item>
+
+              <paper-item name="networks" on-tap="changeTopic">
+                <iron-icon icon="social:share"></iron-icon>
+                Contact
+              </paper-item>
+            </paper-listbox>
+          </paper-card>
+
         </paper-header-panel>
 
         <paper-header-panel main>
@@ -103,10 +110,10 @@
           </paper-toolbar>
 
           <iron-pages selected="{{route.path}}" attr-for-selected="name" fallback-selection="home">
-            <pf-home name="home"></pf-home>
-            <pf-projects name="projects"></pf-projects>
-            <pf-education name="education"></pf-education>
-            <pf-pro name="pro"></pf-pro>
+            <pf-home name="home" route="{{subroute.path}}"></pf-home>
+            <pf-projects name="projects" route="{{subroute.path}}"></pf-projects>
+            <pf-education name="education" route="{{subroute.path}}"></pf-education>
+            <pf-pro name="pro" route="{{subroute.path}}"></pf-pro>
             <pf-networks name="networks"></pf-networks>
           </iron-pages>
 

@@ -10,14 +10,18 @@
 
     <style>
       paper-card {
-        width: 40%;
+        width: 45%;
+        min-width: 275px;
         margin: 20px;
         padding: 20px;
       }
     </style>
 
-
-    <h1>Education</h1>
+    <style is="custom-style">
+      paper-card.white {
+        --paper-card-header-color: #fff;
+      };
+    </style>
 
     <paper-card heading="ESIEA" elevation="2" image="../resources/esiea-logo.png">
       <div class="card-actions">
@@ -32,7 +36,7 @@
       </div>
     </paper-card>
 
-    <paper-card heading="Baccalaureate" elevation="2" image="../resources/rousseau.jpg">
+    <paper-card heading="Baccalaureate" elevation="2" image="../resources/rousseau.jpg" class="white">
       <div class="card-actions">
         <paper-toggle-button checked="{{collapseBac}}">See all</paper-toggle-button>
       </div>

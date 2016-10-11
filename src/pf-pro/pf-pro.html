@@ -10,20 +10,21 @@
 
     <style>
       paper-card {
-        width: 40%;
+        width: 45%;
+        min-width: 275px;
         margin: 20px;
         padding: 20px;
       }
     </style>
 
-    <h1>Professional experience</h1>
-
-    <paper-card heading="SFDN internship" elevation="2" image="../resources/sfdn-logo.png">
+    <paper-card elevation="2" image="../resources/sfdn-logo.png">
       <div class="card-actions">
         <paper-toggle-button checked="{{collapseSfdn}}">See all</paper-toggle-button>
       </div>
       <div class="card-content">
         <h2>April 2016 - August 2016</h2>
+
+        <p>A six months internship in web development</p>
 
         <iron-collapse opened="{{collapseSfdn}}">
           <p>A six months internship in web development</p>
@@ -39,6 +40,8 @@
       <div class="card-content">
         <h2>July 2015 - August 2015</h2>
 
+        <p>A two months journey to Japan including courses and work</p>
+
         <iron-collapse opened="{{collapseJapan}}">
           <p>A two months journey to Japan including courses and work</p>
         </iron-collapse>
@@ -46,12 +49,14 @@
       </div>
     </paper-card>
 
-    <paper-card heading="Les entrepreneuriales" elevation="2" image="../resources/les-entrepreneuriales-logo.jpg">
+    <paper-card elevation="2" image="../resources/les-entrepreneuriales-logo.jpg">
       <div class="card-actions">
         <paper-toggle-button checked="{{collapseEntrep}}">See all</paper-toggle-button>
       </div>
       <div class="card-content">
         <h2>November 2014 - March 2015</h2>
+
+        <p>My participation to Les entrepreneuriales 2015</p>
 
         <iron-collapse opened="{{collapseEntrep}}">
           <p>My participation to Les entrepreneuriales 2015</p>

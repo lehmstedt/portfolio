@@ -11,7 +11,8 @@
 
   <style>
     paper-card {
-      width: 40%;
+      width: 45%;
+      min-width: 275px;
       margin: 20px;
       padding: 20px;
     }
@@ -23,8 +24,7 @@
     };
   </style>
 
-
-      <h1>Projects</h1>
+  <app-location route="{{route}}"></app-location>
 
       <paper-card heading="VR 3D Builder" elevation="2" image="../resources/vive.png">
         <div class="card-content">
@@ -52,9 +52,11 @@
         <div class="content">
           <h2>October 2016 - Now</h2>
 
+          <p>This is indeed the actual website you are using right now.</p>
+
           <iron-collapse opened="{{collapsePortfolio}}">
 
-            <p><strong>This is indeed the actual website you are using right now.</strong> For me, it is a real project, because
+            <p>For me, it is a real project, because
             I took the challenge to use <strong>Polymer</strong>, a Google framework, in order to quickly develop a stable website, instead
             of just set up a Wordpress.
             </p>
@@ -101,6 +103,10 @@
         <div class="card-content">
           <h2>April 2016 - August 2016</h2>
 
+          <p>
+          Administration console for the <a href="http://moncoachlegumes.fr/accueil.html" target="_blank">Mon Coach Légumes</a> website, built with Polymer.
+          </p>
+
           <iron-collapse opened="{{collapseMonCoachLegumes}}">
 
 
@@ -122,7 +128,14 @@
 
             <h3>The administration console</h3>
 
-            <p>Mon Coach Légumes was a project launched by <strong>Maison et Services</strong></p>
+            <p>Mon Coach Légumes was a project launched by <strong>Maison et Services</strong> and executed by the <strong>SFDN</strong>
+              Where I was employed in the SFDN, my objective was to continue the administration console project for this website.
+              This is where I learned how to use Polymer to build web applications.
+            </p>
+
+            <p>I mainly designed the calls between the user interface and the web services of Mon Coach Légumes, written in PHP, which permits us to connect to the database.
+              I also did some user interface and database administration.
+            </p>
 
           </iron-collapse>
         </div>
@@ -135,6 +148,7 @@
         <div class="card-content">
           <h2>October 2015 - December 2015</h2>
 
+          <p>MVC design pattern forum, fully written in HTML, CSS and PHP</p>
           <iron-collapse opened="{{collapseForum}}">
             MVC design pattern forum
           </iron-collapse>
@@ -148,18 +162,22 @@
         <div class="card-content">
           <h2>September 2015 - June 2015</h2>
 
+          <p>Numeric table with RFID for the Laval Museum</p>
+
           <iron-collapse opened="{{collapseNumericTable}}">
             <p>Numeric table with RFID for the Laval Museum</p>
           </iron-collapse>
         </div>
       </paper-card>
 
-      <paper-card heading="Immersion Nomade" elevation="2" image="../resources/immersion-nomade.png">
+      <paper-card elevation="2" image="../resources/immersion-nomade.png">
         <div class="card-actions">
           <paper-toggle-button checked="{{collapseImmersionNomade}}">See all</paper-toggle-button>
         </div>
         <div class="card-content">
           <h2>November 2014 - March 2015</h2>
+
+          <p>Team Building VR project for Les Entrepreneuriales</p>
 
           <iron-collapse opened="{{collapseImmersionNomade}}">
             <p>Team Building VR project for Les Entrepreneuriales</p>
