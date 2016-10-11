@@ -13,6 +13,8 @@
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../../bower_components/paper-badge/paper-badge.html">
 <link rel="import" href="../../bower_components/paper-toggle-button/paper-toggle-button.html">
+<link rel="import" href="../../bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="../../bower_components/paper-menu/paper-submenu.html">
 
 //IRON
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
@@ -70,7 +72,7 @@
 
             <paper-card heading="Topics" elevation="2" style="height: 100%;">
 
-            <paper-listbox selected="{{route.path}}" attr-for-selected="name">
+            <paper-menu selected="{{route.path}}" attr-for-selected="name">
 
               <paper-item name="home" on-tap="changeTopic">
                 <iron-icon icon="home"></iron-icon>
@@ -92,12 +94,22 @@
                 <span id="pro">Professional experience</span>
                 <paper-badge for="pro" label="3"></paper-badge>
               </paper-item>
+            </paper-menu>
 
-              <paper-item name="networks" on-tap="changeTopic">
-                <iron-icon icon="social:share"></iron-icon>
-                Contact
-              </paper-item>
-            </paper-listbox>
+            <paper-menu>
+              <paper-submenu>
+                <paper-item class="menu-trigger">
+                  <iron-icon icon="mail"></iron-icon>
+                  Contact
+                </paper-item>
+                <paper-menu class="menu-content">
+
+                  <paper-item disabled>lehmstedt@et.esiea.fr</paper-item>
+                  <paper-item disabled>+33 6 49 23 82 50</paper-item>
+                  <paper-item><a href="https://fr.linkedin.com/in/lehmstedt-s%C3%A9bastien-852074a4" target="_blank">LinkedIn</a></paper-item>
+                </paper-menu>
+              </paper-submenu>
+            </paper-menu>
           </paper-card>
 
         </paper-header-panel>
@@ -114,7 +126,6 @@
             <pf-projects name="projects" route="{{subroute.path}}"></pf-projects>
             <pf-education name="education" route="{{subroute.path}}"></pf-education>
             <pf-pro name="pro" route="{{subroute.path}}"></pf-pro>
-            <pf-networks name="networks"></pf-networks>
           </iron-pages>
 
         </paper-header-panel>
