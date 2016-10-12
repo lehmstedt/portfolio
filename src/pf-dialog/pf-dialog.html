@@ -11,9 +11,11 @@
 
     </style>
 
-    <paper-dialog id="dialog">
-      <iron-image id="image"></iron-image>
-      <paper-button dialog-dismiss>Back</paper-button>
+    <paper-dialog id="dialog" class="flex">
+
+
+      <paper-card id="image">
+      </paper-card>
     </paper-dialog>
 
   </template>
@@ -29,7 +31,7 @@
       },
 
       open: function(imageSrc){
-        this.$.image.src = imageSrc;
+        this.$.image.image = imageSrc;
         this.$.dialog.open();
       }
 

@@ -12,10 +12,12 @@
       paper-card {
         width: 45%;
         min-width: 275px;
-        margin: 20px;
+        margin: 10px;
         padding: 20px;
       }
     </style>
+
+    <pf-dialog id="pfDialog"></pf-dialog>
 
     <paper-card elevation="2" image="../resources/sfdn-logo.png">
       <div class="card-actions">
@@ -24,10 +26,31 @@
       <div class="card-content">
         <h2>April 2016 - August 2016</h2>
 
-        <p>A six months internship in web development</p>
+        <p>A four months internship in web development</p>
 
         <iron-collapse opened="{{collapseSfdn}}">
-          <p>A six months internship in web development</p>
+          <p>I wanted to do my first internship in a start-up company, and that is why I choose the SFDN, a Laval company created in 2015
+          and specialized in <strong>web and Android development.</strong></p>
+
+          <p>I mainly designed the Mon Coach Légumes administration web application, but I also worked on the Mon Coach Légumes Android application, and other small projects.</p>
+
+          <p>During my internship, I realized that the start-up environment is what I am really comfortable with.
+            quickly, I had to be autonomous, rigorous, and reliable. Then, I have been getting in charge of various responsabilities :
+            <ul>
+              <li>database administration</li>
+              <li>Communication with clients</li>
+              <li>Documentation producing</li>
+            </ul>
+          </p>
+
+          <p>There were various situations when I proved I can work and fix issues under time pressure.</p>
+
+          <paper-card image="../../resources/recommandation.png">
+            <h4>Recommandation letter for the SFDN Chairman, Arnaud Caillon (in english and french)</h4>
+            <paper-button id="../../resources/recommandation.png" on-tap="openDialog">
+              See in fullscreen
+              <iron-icon icon="fullscreen"></iron-icon>
+            </paper-button>
         </iron-collapse>
 
       </div>
@@ -75,6 +98,15 @@
     properties: {
 
     },
+
+    openDialog: function(e){
+      console.log(e.srcElement);
+      console.log(e.srcElement.id);
+      if(e.srcElement.id != undefined && e.srcElement.id != ''){
+        this.$.pfDialog.open(e.srcElement.id);
+      }
+
+    }
 
   });
 

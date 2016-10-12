@@ -13,7 +13,7 @@
     paper-card {
       width: 45%;
       min-width: 275px;
-      margin: 20px;
+      margin: 10px;
       padding: 20px;
     }
 
@@ -95,7 +95,13 @@
 
             <p>I took me only one week to set up and build the global structure of this website. You can see below the git trace of this project</p>
 
-            <iron-image src="../../resources/git-trace-small.png" on-tap="openDialog"></iron-image>
+            <paper-card image="../../resources/git-trace.png">
+              <h5>Git trace</h5>
+              <paper-button id="../../resources/git-trace.png" on-tap="openDialog">
+                See in fullscreen
+                <iron-icon icon="fullscreen"></iron-icon>
+              </paper-button>
+            </paper-card>
           </iron-collapse>
         </div>
       </paper-card>
@@ -125,12 +131,20 @@
 
             <paper-card image="../../resources/mon-coach-legumes-home.png" on-tap="openDialog">
               <h5>Mon Coach Légumes home page</h5>
+              <paper-button id="../../resources/mon-coach-legumes-home.png" on-tap="openDialog">
+                See in fullscreen
+                <iron-icon icon="fullscreen"></iron-icon>
+              </paper-button>
             </paper-card>
 
             <p>This is a website built with Polymer. So it is a Material Design website having all the qualities we discussed in the Portfolio project section</p>
 
             <paper-card image="../../resources/mon-coach-legumes-garden.png">
               <h5>Mon Coach Légumes garden page</h5>
+              <paper-button id="../../resources/mon-coach-legumes-garden.png" on-tap="openDialog">
+                See in fullscreen
+                <iron-icon icon="fullscreen"></iron-icon>
+              </paper-button>
             </paper-card>
 
             <h3>The administration console</h3>
@@ -143,6 +157,33 @@
             <p>I mainly designed the calls between the user interface and the web services of Mon Coach Légumes, written in PHP, which permits us to connect to the database.
               I also did some user interface and database administration.
             </p>
+
+            <paper-card image="../../resources/mcl-console.png">
+              <h5>The Mon Coach Légumes console</h5>
+              <paper-button id="../../resources/mcl-console.png" on-tap="openDialog">
+                See in fullscreen
+                <iron-icon icon="fullscreen"></iron-icon>
+              </paper-button>
+            </paper-card>
+
+
+            <h3>The statistics section</h3>
+
+            <p>I fully developed a statistics section in order to track agregated data about the users (number of accounts, ...) and about how they use
+              Mon Coach Légumes. In order to store the data, I simply choose to use CSV files.
+            </p>
+
+            <paper-card image="../../resources/mcl-console-stats.png">
+              <h5>The Mon Coach Légumes statistics section</h5>
+              <paper-button id="../../resources/mcl-console-stats.png" on-tap="openDialog">
+                See in fullscreen
+                <iron-icon icon="fullscreen"></iron-icon>
+              </paper-button>
+            </paper-card>
+
+            <p><a href="../../resources/mcl-stats.pptx" target='_blank'>Download the Powerpoint presentation about this statistics section</a></p>
+
+
 
           </iron-collapse>
         </div>
@@ -157,7 +198,23 @@
 
           <p>MVC design pattern forum, fully written in HTML, CSS and PHP</p>
           <iron-collapse opened="{{collapseForum}}">
-            MVC design pattern forum
+            <p>
+            This was my first opportunity to implement a MVC design pattern in a web project.
+            It is interfaced with a MySQL database.
+
+            Here are the features :
+            <ul>
+              <li>Read, post messages on topics</li>
+              <li>Create topics</li>
+              <li>Authorization procedure implementation</li>
+              <li>Account customing service</li>
+              <li>Administration page to have control over topics, messages and users</li>
+            </ul>
+
+            </p>
+
+            <p><a href="../../resources/forum.pdf" target="_blank">Download the report about this project</a></p>
+
           </iron-collapse>
         </div>
       </paper-card>
@@ -172,7 +229,48 @@
           <p>Numeric table with RFID for the Laval Museum</p>
 
           <iron-collapse opened="{{collapseNumericTable}}">
-            <p>Numeric table with RFID for the Laval Museum</p>
+            <p>In november 2016, the Laval Museum (CCSTI) is launching an exhibition about innovation in food proccessing industry,
+            and wanted an interactive numeric table as a part of this event.
+          </p>
+
+            <paper-card image="../../resources/ccsti.png">
+              <h5><a href="http://www.ccsti-laval.org/" target="_blank">See the CCSTI website</a></h5>
+            </paper-card>
+
+            <h3>The synopsis is quite simple :</h3>
+            <ul>
+              <li>The user have got in front of him a table with food, dishes, that seems to be an ordinary restaurant table</li>
+              <li>He notices he can manipulate factice food on the table</li>
+              <li>He put food onto his plate</li>
+              <li>An animation, starting from the plate, is showing the industry steps that was necessary to become a comestible product</li>
+            </ul>
+
+            <h3>The showed data is :</h3>
+            <ul>
+              <li>What kind of processing the product underwent</li>
+              <li>The distance runned between each processing step</li>
+              <li>The carbon footprint</li>
+              <li>Nutritional informations about the product</li>
+            </ul>
+            </p>
+
+            <h4>The main goal of this project is to make the user concerned about the food he is consuming.</h4>
+
+            <h3>How does it works</h3>
+            The interaction with the table is designed to be as simple as possible. The original goal was to launch events
+            when food is put onto the plate. We choose to use <strong>RFID</strong> for its simplicity and its small cost to implement.
+            We ordered an <strong>Arduino</strong> board to pilot a RFID board. The board is connected by serial port to a
+            computer running a Unity3D application we developed.
+
+            <h3>Demonstration video</h3>
+
+            <video width="100%" heigth="100%" controls>
+              <source src="../../resources/ccsti.mp4" type="video/mp4">
+            </video>
+
+            <a href="../../resources/ccsti.pdf" target="_blank">Download the report about this project</a>
+
+
           </iron-collapse>
         </div>
       </paper-card>
@@ -184,10 +282,24 @@
         <div class="card-content">
           <h2>November 2014 - March 2015</h2>
 
-          <p>Team Building VR project for Les Entrepreneuriales</p>
+          <p>Team Building VR application for Les Entrepreneuriales</p>
 
           <iron-collapse opened="{{collapseImmersionNomade}}">
-            <p>Team Building VR project for Les Entrepreneuriales</p>
+            <p>In a entrepreneurial context, we developed a VR Team Buiding project as a proof of concept, using <strong>Unity3D, Kinect and Oculus Rift</strong></p>
+
+            <h3>How does work the Team Building in this application ?</h3>
+
+            <p>While a person is wearing an Oculus Rift, a other is tracked by the Kinect. The first person sees the second in a virtual environment, and items are
+              falling from the sky. The goal is for the person who is seeing the scene to pilot the second person in order to catch the items, by voice commands
+            </p>
+
+            <h3>Presentation video</h3>
+
+            <video width="100%" height="100%" controls>
+              <source src="../../resources/immersion-nomade.mp4" type="video/mp4">
+            </video>
+
+
           </iron-collapse>
         </div>
       </paper-card>
@@ -205,7 +317,11 @@
 
     openDialog: function(e){
       console.log(e.srcElement);
-      this.$.pfDialog.open(e.srcElement.src.replace('-small', ''));
+      console.log(e.srcElement.id);
+      if(e.srcElement.id != undefined && e.srcElement.id != ''){
+        this.$.pfDialog.open(e.srcElement.id);
+      }
+
     }
 
   });
