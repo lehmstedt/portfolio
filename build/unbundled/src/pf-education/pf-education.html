@@ -1,0 +1,81 @@
+<html><head></head><body><dom-module id="pf-education">
+
+  <style is="custom-style" include="iron-flex iron-flex-alignment">
+    :host {
+      display: block;
+    }
+  </style>
+
+  <style>
+    paper-card {
+      width: 45%;
+      min-width: 275px;
+      margin: 10px;
+      padding: 20px;
+    }
+  </style>
+
+  <style is="custom-style">
+    paper-card.white {
+      --paper-card-header-color: #fff;
+    };
+  </style>
+
+  <template>
+
+    <paper-card heading="ESIEA" elevation="2" image="../resources/esiea-logo.png">
+      <div class="card-actions">
+        <paper-toggle-button checked="{{collapseEsiea}}">See all</paper-toggle-button>
+      </div>
+      <div class="card-content">
+        <h2>2011 - 2017</h2>
+
+      <strong><a href="https://www.esiea.fr/" target="_blank">ESIEA</a></strong> is an engineering school in digital sciences, based in Laval.
+
+        <iron-collapse opened="{{collapseEsiea}}">
+          <p>
+            Various fields are teached :
+            </p><ul>
+              <li>General algorithm programming</li>
+              <li>Networks</li>
+              <li>Image processing</li>
+              <li>Security</li>
+              <li>Web development</li>
+              <li>Virtual Reality</li>
+              <li>Embedded systems</li>
+            </ul>
+          <p></p>
+
+          <p>
+            I decided to specialize myself in Virtual Reality field. Laval, with the <strong><a href="http://www.laval-virtual.org/" target="_blank">Laval Virtual</a></strong>
+            international annual event, is a great place to be in touch with Virtual Reality companies.
+          </p>
+
+          <p>ESIEA is expecting a good level in english, and that is why I have passed the <strong><a href="http://www.etsglobal.org/Fr/Eng/Tests-Preparation/The-TOEIC-Tests" target="blank">TOEIC</a></strong>
+            with a score of <strong>850 over 990</strong>
+          </p>
+        </iron-collapse>
+      </div>
+    </paper-card>
+
+    <paper-card heading="Baccalaureate" elevation="2" image="../resources/rousseau.jpg" class="white">
+      <div class="card-actions">
+        <paper-toggle-button checked="{{collapseBac}}">See all</paper-toggle-button>
+      </div>
+      <div class="card-content">
+        <h2>2011</h2>
+
+        <strong><a href="http://douanier-rousseau.paysdelaloire.e-lyco.fr/" target="_blank">Douanier Rousseau highschool</a></strong>, Laval, France.
+        Scientific baccalaureate
+        <iron-collapse opened="{{collapseBac}}">
+          Speciality : mathematics
+        </iron-collapse>
+      </div>
+    </paper-card>
+
+  </template>
+
+  <script>Polymer({is:"pf-education",properties:{}});</script>
+
+</dom-module>
+</body></html>

@@ -1,0 +1,184 @@
+<html><head></head><body><dom-module id="pf-pro">
+
+  <style is="custom-style" include="iron-flex iron-flex-alignment">
+    :host {
+      display: block;
+    }
+  </style>
+
+  <style>
+    paper-card {
+      width: 45%;
+      min-width: 275px;
+      margin: 10px;
+      padding: 20px;
+    }
+  </style>
+
+  <template>
+
+
+    <pf-dialog id="pfDialog"></pf-dialog>
+
+    <paper-card elevation="2" image="../resources/sfdn-logo.png">
+      <div class="card-actions">
+        <paper-toggle-button checked="{{collapseSfdn}}">See all</paper-toggle-button>
+      </div>
+      <div class="card-content">
+        <h2>April 2016 - August 2016</h2>
+
+        <p>A four months internship in web development</p>
+
+        <iron-collapse opened="{{collapseSfdn}}">
+          <p>I wanted to do my first internship in a start-up company, and that is why I choose the SFDN, a Laval company created in 2015
+          and specialized in <strong>web and Android development.</strong></p>
+
+          <p>I mainly designed the Mon Coach Légumes administration web application, but I also worked on the Mon Coach Légumes Android application, and other small projects.</p>
+
+          <p>During my internship, I realized that the start-up environment is what I am really comfortable with.
+            quickly, I had to be autonomous, rigorous, and reliable. Then, I have been getting in charge of various responsabilities :
+            </p><ul>
+              <li>database administration</li>
+              <li>Communication with clients</li>
+              <li>Documentation producing</li>
+            </ul>
+          <p></p>
+
+          <p>There were various situations when I proved I can work and fix issues under time pressure.</p>
+
+          <paper-card image="../../resources/recommandation.png">
+            <h4>Recommandation letter for the SFDN Chairman, Arnaud Caillon (in english and french)</h4>
+            <paper-button id="../../resources/recommandation.png" on-tap="openDialog">
+              See in fullscreen
+              <iron-icon icon="fullscreen"></iron-icon>
+            </paper-button>
+        </paper-card></iron-collapse>
+
+      </div>
+    </paper-card>
+
+    <paper-card heading="Japan experience" elevation="2" image="../resources/japan.jpg">
+      <div class="card-actions">
+        <paper-toggle-button checked="{{collapseJapan}}">See all</paper-toggle-button>
+      </div>
+      <div class="card-content">
+        <h2>July 2015 - August 2015</h2>
+
+        <p>A two months journey to Japan including courses and a job in a japanese company</p>
+
+        <iron-collapse opened="{{collapseJapan}}">
+          <p>I studied japanese during my first four years in ESIEA, so I developed relationship with
+          the <strong>Horizon Japon</strong> association, based in the school, which organise each year a journey to Japan
+          for the japanese courses students.</p>
+
+          <a href="https://www.esiea.fr/japon-terre-de-predilection-pour-de-nombreux-etudiants/" target="_blank">See more about Horizon Japon</a>
+
+          <h3>The first week in Tokyo</h3>
+
+          <p>
+          The schedule was to be housed in a hotel in Tokyo for a week, in order to acclimate ourselves to the Japanese way of life.
+          We had free time to discover places, people, restaurants, etc...
+          </p>
+
+          <h3>Three weeks as a guest in a japanese family</h3>
+
+          <p>
+            This was for me the most interesting part of this journey. I was in a situation where I had the opportunity to
+            highly improve my japanese skills. I was housed by the Okumura family, in the Nara city, who were very welcoming and patient. They indeed
+            really wanted me to discover the japanese culture and speak with them in japanese, wich I did with pleasure.
+          </p>
+
+          <paper-card image="../../resources/okumura.png">
+            <h4>The Okumura family and I</h4>
+            <paper-button id="../../resources/okumura.png" on-tap="openDialog">
+              See in fullscreen
+              <iron-icon icon="fullscreen"></iron-icon>
+            </paper-button>
+          </paper-card>
+
+          <p>
+            Meanwhile, I took part to culture and japanese courses, visited schools, Shinto and Bouddist temples, museums, and participated to a lot of others activities.
+            Nara is a more authentic japanese city that Tokyo is actually do, even if I appreciated both. I also had the chance to visit Osaka and Kyoto.
+          </p>
+
+          <h3>A one month job in a hotel</h3>
+
+          <p>
+            I worked in a Caro Foresta hotel, near from Odawara. I mainly did the housework, washed the dishes, and served the clients in the hotel restaurant.
+            I had to adapt myself to a completely different context from what I was used to. I learned the rigorous style and the workstyle of the typical japanese worker.
+
+          </p>
+
+          <p>I would say, after this experience, that I am able to adapt myself in a international context. Indeed, I really enjoyed this journey, and I feel ready
+          to work abroad again.</p>
+        </iron-collapse>
+
+      </div>
+    </paper-card>
+
+    <paper-card elevation="2" image="../resources/les-entrepreneuriales-logo.jpg">
+      <div class="card-actions">
+        <paper-toggle-button checked="{{collapseEntrep}}">See all</paper-toggle-button>
+      </div>
+      <div class="card-content">
+        <h2>November 2014 - March 2015</h2>
+
+        <p>My participation to Les entrepreneuriales 2015</p>
+
+        <iron-collapse opened="{{collapseEntrep}}">
+          <p>When I heard about the <strong>Les Entrepreneuriales</strong> program, I knew it was a great opportunity for me to discover
+          the world of company creation. After a speed dating organized by the program, I was interested in a Virtual Reality company project
+          imaginated by Julien Lassignardie, a student in audiovisual arts. Three other persons joined us in this team : </p>
+
+          <ul>
+            <li>Nicolas Blanc, student in data processing</li>
+            <li>Justine Jicquel, student in communication</li>
+            <li>Oxia Braud-Maillard, student in communication</li>
+          </ul>
+
+          <h3>The Les Entrepreneuriales concept</h3>
+          <p>
+            The goal was to simulate a company creation.
+            The program was organized in courses, with various themes:
+            </p><ul>
+              <li>Market laws</li>
+              <li>Business Plan</li>
+              <li>Accounting</li>
+              <li>Communication</li>
+              <li>Legal basics</li>
+            </ul>
+          <p></p>
+
+          <p>Each course was corresponding to a new step in the development of the project.
+            By designing our market offer, we finally found our company name : <strong>Immersion Nomade.</strong>
+          </p>
+
+          <p>
+            Our company is a business to business Virtual Reality offer. Immersion Nomade is selling a service to companies,
+            in order to organize Team-Building with applications we developed. As a proof of concept, I mainly developed a prototype
+            using Kinect, Oculus Rift with an application built with Unity3D.
+          </p>
+
+          <h3>The final presentation</h3>
+
+          <p>
+          In March 2015, we presented our company and our product to a jury. I would say that this was a great experience, and I learned a lot
+          about company creation and entrepreneurship. In the future, I think I will try to start a company.
+          </p>
+
+          <h3>Presentation video</h3>
+
+          <video width="100%" height="100%" controls="">
+            <source src="../../resources/immersion-nomade.mp4" type="video/mp4">
+          </video>
+        </iron-collapse>
+      </div>
+    </paper-card>
+
+
+  </template>
+
+  <script>Polymer({is:"pf-pro",properties:{},openDialog:function(e){console.log(e.srcElement),console.log(e.srcElement.id),void 0!=e.srcElement.id&&""!=e.srcElement.id&&this.$.pfDialog.open(e.srcElement.id)}});</script>
+
+</dom-module>
+</body></html>

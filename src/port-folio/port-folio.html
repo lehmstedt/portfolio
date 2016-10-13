@@ -40,17 +40,16 @@
 <link rel="import" href="../pf-dialog/pf-dialog.html">
 
 <dom-module id="port-folio">
+
+  <style is="custom-style" include="iron-flex iron-flex-alignment iron-positioning">
+    :host {
+      display: block;
+    },
+
+  </style>
+
   <template>
-    <style is="custom-style" include="iron-flex iron-flex-alignment iron-positioning">
-      :host {
-        display: block;
-      },
-
-    </style>
-
-    <style>
-
-    </style>
+  
 
     <iron-localstorage id="localstorage" value="{{route.path}}"></iron-localstorage>
 

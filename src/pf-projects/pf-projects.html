@@ -1,7 +1,5 @@
 <dom-module id="pf-projects">
 
-  <template>
-
   <style is="custom-style" include="iron-flex iron-flex-alignment">
     :host {
       display: block;
@@ -26,9 +24,12 @@
     };
   </style>
 
-  <app-location route="{{route}}"></app-location>
+  <template>
 
-  <pf-dialog id="pfDialog"></pf-dialog>
+
+    <app-location route="{{route}}"></app-location>
+
+    <pf-dialog id="pfDialog"></pf-dialog>
 
 
       <paper-card heading="VR 3D Builder" elevation="2" image="../resources/vive.png">
@@ -41,7 +42,8 @@
 
           <iron-collapse opened="{{collapseVr3dBuilder}}">
 
-            <p>With a student team from <strong>ESIEA</strong>, we will develop a <strong>3D castle builder</strong> using <strong>Unity3D</strong> and <strong>HTC Vive</strong> compatible.
+            <p>With a student team from <strong>ESIEA</strong>, we will develop a <strong>3D castle builder</strong> using <strong><a href="https://unity3d.com/" target="_blank">Unity3D</a></strong>
+            and <strong><a href="http://www.vive.com/fr/" target="_blank">HTC Vive</a></strong> compatible.
             At the end, the goal is to add interaction like protecting the castle against enemies, for example.
             Please come back a little bit later in order to get news about this project !
             </p>
@@ -62,17 +64,17 @@
           <iron-collapse opened="{{collapsePortfolio}}">
 
             <p>For me, it is a real project, because
-            I took the challenge to use <strong>Polymer</strong>, a Google framework, in order to quickly develop a stable website, instead
+            I took the challenge to use <strong><a href="https://www.polymer-project.org/1.0/" target="_blank">Polymer</a></strong>, a Google framework, in order to quickly develop a stable website, instead
             of just set up a Wordpress.
             </p>
 
             <h3>What is Polymer ?</h3>
-            <p>This is a web components based framework designed by a Google team</p>
+            <p>This is a web components based framework designed by a Google team.</p>
             <p><strong>What is important to keep in mind about this framework ?</strong></p>
             <ul>
               <li><h4>The Material Design</h4>
                 <p>This is the Google graphical charter, allowing a unique and clean design.
-                You can see the official documentation <a href="https://material.google.com/" target="_blank">here</a>
+                You can see the official documentation <strong><a href="https://material.google.com/" target="_blank">here</a></strong>
                 </p>
               </li>
 
@@ -80,8 +82,13 @@
                 <p>Google bet the web components will be the next standard for the web.
                 According to this statement, Polymer is trying to use the maximum of the concept of web components.
                 Obvously, a new standard means an great cross-browser compatibility.
-                You can get more informations about web components on the <a href="http://webcomponents.org/" target="_blank">Official website</a>
+                You can get more informations about web components on the <strong><a href="http://webcomponents.org/" target="_blank">Official website</a></strong>
                 </p>
+              </li>
+
+              <li><h4>The web application concept</h4>
+                <p>Polymer is thought to build web applications, wich means that the website will be highly interactive, and the possibilities look
+                  like you are building a native application, but for the web</p>
               </li>
             </ul>
 
@@ -93,7 +100,7 @@
             to a database. At this point, the powerness of Polymer will make sense in this context.
             </p>
 
-            <p>I took me only one week to set up and build the global structure of this website. You can see below the git trace of this project</p>
+            <p>I took me only one week to set up and build the global structure of this website. You can see below the git trace of this project :</p>
 
             <paper-card image="../../resources/git-trace.png">
               <h4>Git trace</h4>
@@ -115,7 +122,7 @@
           <h2>April 2016 - August 2016</h2>
 
           <p>
-          Administration console for the <a href="http://moncoachlegumes.fr/accueil.html" target="_blank">Mon Coach Légumes</a> website, built with Polymer.
+          Administration console for the <strong><a href="http://moncoachlegumes.fr/accueil.html" target="_blank">Mon Coach Légumes</a></strong> website, built with Polymer.
           </p>
 
           <iron-collapse opened="{{collapseMonCoachLegumes}}">
@@ -137,7 +144,7 @@
               </paper-button>
             </paper-card>
 
-            <p>This is a website built with Polymer. So it is a Material Design website having all the qualities we discussed in the Portfolio project section</p>
+            <p>This is a website built with Polymer. So it is a Material Design website having all the qualities we discussed in the Portfolio project section.</p>
 
             <paper-card image="../../resources/mon-coach-legumes-garden.png">
               <h4>Mon Coach Légumes garden page</h4>
@@ -149,7 +156,8 @@
 
             <h3>The administration console</h3>
 
-            <p>Mon Coach Légumes was a project launched by <strong>Maison et Services</strong> and executed by the <strong>SFDN</strong>
+            <p>Mon Coach Légumes was a project launched by <strong><a href="https://www.maison-et-services.com/" target="_blank">Maison et Services</a></strong> and executed by the
+               <strong><a href="http://www.sfdn.eu/" target="_blank">SFDN</a>.</strong>
               Where I was employed in the SFDN, my objective was to continue the administration console project for this website.
               This is where I learned how to use Polymer to build web applications.
             </p>
@@ -181,7 +189,7 @@
               </paper-button>
             </paper-card>
 
-            <p><a href="../../resources/mcl-stats.pptx" target='_blank'>Download the Powerpoint presentation about this statistics section</a></p>
+            <p><strong><a href="../../resources/mcl-stats.pptx" target='_blank'>Download the Powerpoint presentation about this statistics section</a></strong></p>
 
 
 
@@ -213,7 +221,7 @@
 
             </p>
 
-            <p><a href="../../resources/forum.pdf" target="_blank">Download the report about this project</a></p>
+            <p><strong><a href="../../resources/forum.pdf" target="_blank">Download the report about this project</a></strong></p>
 
           </iron-collapse>
         </div>
@@ -247,7 +255,7 @@
 
             <h3>The showed data is :</h3>
             <ul>
-              <li>What kind of processing the product underwent</li>
+              <li>What kind of processes the product underwent</li>
               <li>The distance runned between each processing step</li>
               <li>The carbon footprint</li>
               <li>Nutritional informations about the product</li>
