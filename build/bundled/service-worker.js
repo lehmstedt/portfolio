@@ -29,7 +29,7 @@
 
 
 /* eslint-disable quotes, comma-spacing */
-var PrecacheConfig = [["/index.html","0db67495e7c87d3128e893ac166196d6"],["/shared-bundle.html","5dff21a6c055fc86db4840bedb9c077e"],["/src/pf-dialog/pf-dialog.html","bf400fb4624fd50ed5ca6b9320707eca"],["/src/pf-education/pf-education.html","0bd6ac9e0d146c766d3452047071d022"],["/src/pf-home/pf-home.html","bc518a5b3e03647afe5f7b1f7ac726d3"],["/src/pf-pro/pf-pro.html","4ef9068e24eab087f4437e8438a8cf3a"],["/src/pf-projects/pf-projects.html","4951b384b0413518e5694194373df2cf"],["/src/port-folio/port-folio.html","fe2eeb02ed68cfa4461e1f3831bb9f8a"]];
+var PrecacheConfig = [["/index.html","0db67495e7c87d3128e893ac166196d6"],["/shared-bundle.html","5dff21a6c055fc86db4840bedb9c077e"],["/src/pf-dialog/pf-dialog.html","f93f87f8f35c10a0f32b6265912c8fe2"],["/src/pf-education/pf-education.html","15c7fccae8e864ac1610d8f77591ca67"],["/src/pf-home/pf-home.html","c7be4e913d37812d4acb0ea0b9c6ce70"],["/src/pf-pro/pf-pro.html","d0e5e8e1332912f85c079af36ad4b843"],["/src/pf-projects/pf-projects.html","eb52c8f46eb9721810326ccd3a680f32"],["/src/port-folio/port-folio.html","5ce5a8f62241f20394379a2953932b2e"]];
 /* eslint-enable quotes, comma-spacing */
 var CacheNamePrefix = 'sw-precache-v1--' + (self.registration ? self.registration.scope : '') + '-';
 

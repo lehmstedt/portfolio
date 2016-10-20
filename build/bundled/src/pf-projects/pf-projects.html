@@ -32,13 +32,13 @@
     <pf-dialog id="pfDialog"></pf-dialog>
 
 
-      <paper-card heading="VR 3D Builder" elevation="2" image="../resources/vive.jpg">
+      <paper-card heading="VR 3D World builder" elevation="2" image="../resources/vive.jpg">
         <div class="card-content">
           <div class="card-actions">
             <paper-toggle-button checked="{{collapseVr3dBuilder}}">See all</paper-toggle-button>
           </div>
           <h2>Coming soon...</h2>
-          <p>3D castle builder with Unity3D, HTC Vive compatible</p>
+          <h3>3D world builder with Unity3D, HTC Vive compatible.</h3>
 
           <iron-collapse opened="{{collapseVr3dBuilder}}">
 
@@ -59,7 +59,7 @@
         <div class="content">
           <h2>October 2016 - Now</h2>
 
-          <p>This is indeed the actual website you are using right now.</p>
+          <h3>This is indeed the actual website you are using right now.</h3>
 
           <iron-collapse opened="{{collapsePortfolio}}">
 
@@ -121,20 +121,26 @@
         <div class="card-content">
           <h2>April 2016 - August 2016</h2>
 
-          <p>
+          <h3>
           Administration console for the <strong><a href="http://moncoachlegumes.fr/accueil.html" target="_blank">Mon Coach Légumes</a></strong> website, built with Polymer.
-          </p>
+        </h3>
 
           <iron-collapse opened="{{collapseMonCoachLegumes}}">
 
 
             <h3>What is Mon Coach Légumes ?</h3>
 
-            <p>Mon Coach Légumes is a service giving everyone the chance to be coached in the field of growing vegetables and fruits.
-            The concept is quite simple : while you a taking care of a virtual vegetable garden, you can do the same for real, and
-            get an amount of useful advices, like the plantation periods, the compatibility between vegetables, when water your products...
-            You get everything in order to make your vegetable garden a success !
-            </p>
+            <p>Mon Coach Légumes is a service allowing everyone to be tutored while growing vegetables and fruits.
+            The concept is quite simple : while you are taking care of a virtual garden, you can do the same for real, and
+            get an amount of useful advices :
+            </p><ul>
+              <li> the plantation periods</li>
+              <li>the compatibility between vegetables</li>
+              <li>when water your products...</li>
+            </ul>
+
+            The ball is in your court for a succesful vegetable garden !
+            <p></p>
 
             <paper-card image="../../resources/mon-coach-legumes-home.jpg" on-tap="openDialog">
               <h4>Mon Coach Légumes home page</h4>
@@ -144,7 +150,7 @@
               </paper-button>
             </paper-card>
 
-            <p>This is a website built with Polymer. So it is a Material Design website having all the qualities we discussed in the Portfolio project section.</p>
+            <p>This is a website built with Polymer. So it is a Material Design website having all the qualities we discussed in the Portfolio section.</p>
 
             <paper-card image="../../resources/mon-coach-legumes-garden.jpg">
               <h4>Mon Coach Légumes garden page</h4>
@@ -157,12 +163,12 @@
             <h3>The administration console</h3>
 
             <p>Mon Coach Légumes was a project launched by <strong><a href="https://www.maison-et-services.com/" target="_blank">Maison et Services</a></strong> and executed by the
-               <strong><a href="http://www.sfdn.eu/" target="_blank">SFDN</a>.</strong>
-              Where I was employed in the SFDN, my objective was to continue the administration console project for this website.
+               <strong><a href="http://www.sfdn.eu/" target="_blank">SFDN</a></strong> company,
+              where I was employed. I was designated to continue the administration console development for this website.
               This is where I learned how to use Polymer to build web applications.
             </p>
 
-            <p>I mainly designed the calls between the user interface and the web services of Mon Coach Légumes, written in PHP, which permits us to connect to the database.
+            <p>I mainly designed the calls between the user interface and the web services of Mon Coach Légumes, written in PHP. Those web services allow us to connect to the database.
               I also did some user interface and database administration.
             </p>
 
@@ -178,7 +184,7 @@
             <h3>The statistics section</h3>
 
             <p>I fully developed a statistics section in order to track agregated data about the users (number of accounts, ...) and about how they use
-              Mon Coach Légumes. In order to store the data, I simply choose to use CSV files.
+              Mon Coach Légumes. In order to store the data, I simply chooe to use CSV files.
             </p>
 
             <paper-card image="../../resources/mcl-console-stats.jpg">
@@ -204,7 +210,7 @@
         <div class="card-content">
           <h2>October 2015 - December 2015</h2>
 
-          <p>MVC design pattern forum, fully written in HTML, CSS and PHP</p>
+          <h3>MVC design pattern forum, fully written in HTML, CSS and PHP.</h3>
           <iron-collapse opened="{{collapseForum}}">
             <p>
             This was my first opportunity to implement a MVC design pattern in a web project.
@@ -232,12 +238,12 @@
           <paper-toggle-button checked="{{collapseNumericTable}}">See all</paper-toggle-button>
         </div>
         <div class="card-content">
-          <h2>September 2015 - June 2015</h2>
+          <h2>September 2015 - June 2016</h2>
 
-          <p>Numeric table with RFID for the Laval Museum</p>
+          <h3>Numeric table with RFID for the Laval Museum</h3>
 
           <iron-collapse opened="{{collapseNumericTable}}">
-            <p>In november 2016, the Laval Museum (CCSTI) is launching an exhibition about innovation in food proccessing industry,
+            <p>In november 2016, the Laval Museum (CCSTI) will launch an exhibition about innovation in food proccessing industry,
             and wanted an interactive numeric table as a part of this event.
           </p>
 
@@ -247,10 +253,10 @@
 
             <h3>The synopsis is quite simple :</h3>
             <ul>
-              <li>The user have got in front of him a table with food, dishes, that seems to be an ordinary restaurant table</li>
+              <li>The user is facing a table with food, dishes, that seems to be an ordinary restaurant table</li>
               <li>He notices he can manipulate factice food on the table</li>
-              <li>He put food onto his plate</li>
-              <li>An animation, starting from the plate, is showing the industry steps that was necessary to become a comestible product</li>
+              <li>He puts food onto his plate</li>
+              <li>An animation, starting from the plate, shows the industry steps that was necessary to have a eatable product</li>
             </ul>
 
             <h3>The showed data is :</h3>
@@ -262,17 +268,17 @@
             </ul>
             <p></p>
 
-            <h4>The main goal of this project is to make the user concerned about the food he is consuming.</h4>
+            <h4>The main goal of this project is to sensitise people about the food he is consuming.</h4>
 
-            <h3>How does it works</h3>
-            The interaction with the table is designed to be as simple as possible. The original goal was to launch events
-            when food is put onto the plate. We choose to use <strong>RFID</strong> for its simplicity and its small cost to implement.
-            We ordered an <strong>Arduino</strong> board to pilot a RFID board. The board is connected by serial port to a
+            <h3>How does it work</h3>
+            The interaction with the table is designed to be as simple as possible. The original goal was to launch animations
+            when food is put onto the plate. We chose to use <strong>RFID</strong> for its simplicity and its small cost to implement.
+            We ordered an <strong>Arduino</strong> board to pilot a RFID board. The board was connected by serial port to a
             computer running a Unity3D application we developed.
 
             <h3>Demonstration video</h3>
 
-            <video width="100%" heigth="100%" controls="">
+            <video width="100%" heigth="100%" controls="" muted="">
               <source src="../../resources/ccsti.webm" type="video/webm">
             </video>
 
@@ -290,15 +296,16 @@
         <div class="card-content">
           <h2>November 2014 - March 2015</h2>
 
-          <p>Team Building VR application for Les Entrepreneuriales</p>
+          <h3>Team Building VR application for Les Entrepreneuriales</h3>
 
           <iron-collapse opened="{{collapseImmersionNomade}}">
-            <p>In a entrepreneurial context, we developed a VR Team Buiding project as a proof of concept, using <strong>Unity3D, Kinect and Oculus Rift</strong></p>
+            <p>In a entrepreneurial context, we developed a VR Team Building project as a proof of concept, using <strong>Unity3D, Kinect and Oculus Rift</strong></p>
 
-            <h3>How does work the Team Building in this application ?</h3>
+            <h3>How does the Team Building work in this application ?</h3>
 
-            <p>While a person is wearing an Oculus Rift, a other is tracked by the Kinect. The first person sees the second in a virtual environment, and items are
-              falling from the sky. The goal is for the person who is seeing the scene to pilot the second person in order to catch the items, by voice commands
+            <p>While a person is wearing an Oculus Rift, an other is tracked by the Kinect. The first person sees the second in a virtual environment, and items are
+              falling from the sky. The goal for the person who is seeing the scene is to pilot the second person by voice commands in order to catch the items.
+              This is in fact a trust exercice.
             </p>
 
           </iron-collapse>
