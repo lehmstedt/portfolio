@@ -26,7 +26,9 @@
     "paper-menu": "PolymerElements/paper-menu#^1.2.2",
     "paper-dialog": "PolymerElements/paper-dialog#^1.1.0",
     "google-castable-video": "GoogleWebComponents/google-castable-video#^1.0.3",
-    "paper-dialog-scrollable": "PolymerElements/paper-dialog-scrollable#^1.1.5"
+    "paper-dialog-scrollable": "PolymerElements/paper-dialog-scrollable#^1.1.5",
+    "mdi": "^1.7.22",
+    "iron-iconset-svg": "PolymerElements/iron-iconset-svg#^1.1.0"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

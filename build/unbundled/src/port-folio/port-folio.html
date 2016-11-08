@@ -23,10 +23,12 @@
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="../../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/communication-icons.html">
 <link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../../bower_components/iron-localstorage/iron-localstorage.html">
 <link rel="import" href="../../bower_components/iron-collapse/iron-collapse.html">
 <link rel="import" href="../../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../../bower_components/iron-iconset-svg/iron-iconset-svg.html">
 
 //APP
 <link rel="import" href="../../bower_components/app-route/app-location.html">
@@ -49,9 +51,27 @@
   </style>
 
   <template>
-  
+
 
     <iron-localstorage id="localstorage" value="{{route.path}}"></iron-localstorage>
+
+    <iron-iconset-svg name="custom-icons" size="24">
+      <svg>
+        <defs>
+          <g id="linked-in">
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path fill="#FFFFFF" d="M19,19H16V13.7A1.5,1.5 0 0,0 14.5,12.2A1.5,1.5 0 0,0 13,13.7V19H10V10H13V11.2C13.5,10.36 14.59,9.8 15.5,9.8A3.5,3.5 0 0,1 19,13.3M6.5,8.31C5.5,8.31 4.69,7.5 4.69,6.5A1.81,1.81 0 0,1 6.5,4.69C7.5,4.69 8.31,5.5 8.31,6.5A1.81,1.81 0 0,1 6.5,8.31M8,19H5V10H8M20,2H4C2.89,2 2,2.89 2,4V20A2,2 0 0,0 4,22H20A2,2 0 0,0 22,20V4C22,2.89 21.1,2 20,2Z"></path>
+            </svg>
+          </g>
+
+          <g id="github">
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path fill="#FFFFFF" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path>
+            </svg>
+          </g>
+        </defs>
+      </svg>
+    </iron-iconset-svg>
 
     <app-location id="location" route="[[route]]"></app-location>
 
@@ -94,20 +114,6 @@
               </paper-item>
             </paper-menu>
 
-            <paper-menu>
-              <paper-submenu>
-                <paper-item class="menu-trigger">
-                  <iron-icon icon="mail"></iron-icon>
-                  Contact
-                </paper-item>
-                <paper-menu class="menu-content">
-
-                  <paper-item disabled="">lehmstedt@et.esiea.fr</paper-item>
-                  <paper-item disabled="">+33 6 49 23 82 50</paper-item>
-                  <paper-item><a href="https://fr.linkedin.com/in/lehmstedt-s%C3%A9bastien-852074a4" target="_blank">LinkedIn</a></paper-item>
-                </paper-menu>
-              </paper-submenu>
-            </paper-menu>
           </paper-card>
 
         </paper-header-panel>
@@ -117,7 +123,24 @@
             <paper-icon-button icon="menu" paper-drawer-toggle="">
             </paper-icon-button>
             <div class="title">PortFolio</div>
+            <paper-icon-button icon="mail" on-tap="mailTo"></paper-icon-button>
+            <p>lehmstedt@et.esiea.fr</p>
+            <a id="mailLink" hidden="" href="mailto:lehmstedt@et.esiea.fr"></a>
+
+            <paper-icon-button icon="communication:call" on-tap="call"></paper-icon-button>
+            <a id="callLink" hidden="" href="tel:+33649238250"></a>
+            <p>+33 6 49 23 82 50</p>
+
+            <paper-icon-button icon="custom-icons:linked-in" on-tap="goToLinkedIn"></paper-icon-button>
+            <a id="linkedInLink" hidden="" href="https://fr.linkedin.com/in/lehmstedt-s%C3%A9bastien-852074a4" target="_blank"></a>
+
+            <paper-icon-button icon="custom-icons:github" on-tap="goToGithub"></paper-icon-button>
+            <a id="githubLink" hidden="" href="https://github.com/lehmstedt" target="_blank"></a>
+
+
           </paper-toolbar>
+
+
 
           <iron-pages selected="{{route.path}}" attr-for-selected="name" fallback-selection="home">
             <pf-home name="home" route="{{subroute.path}}"></pf-home>
@@ -135,6 +158,6 @@
 
   </template>
 
-  <script>Polymer({is:"port-folio",properties:{route:{type:Object,value:function(){return{path:"/home",prefix:""}},notify:!0,reflectToAttribute:!0},routeData:{type:Object,notify:!0,reflectToAttribute:!0},subroute:{type:Object,notify:!0,reflectToAttribute:!0}},changeTopic:function(t){this.set("route.path","/"+t.srcElement.selected)}});</script>
+  <script>Polymer({is:"port-folio",properties:{route:{type:Object,value:function(){return{path:"/home",prefix:""}},notify:!0,reflectToAttribute:!0},routeData:{type:Object,notify:!0,reflectToAttribute:!0},subroute:{type:Object,notify:!0,reflectToAttribute:!0}},changeTopic:function(t){this.set("route.path","/"+t.srcElement.selected)},mailTo:function(){console.log("mail link"),this.$.mailLink.click()},goToLinkedIn:function(){this.$.linkedInLink.click()},goToGithub:function(){this.$.githubLink.click()},call:function(){console.log("call"),this.$.callLink.click()}});</script>
 </dom-module>
 </body></html>
