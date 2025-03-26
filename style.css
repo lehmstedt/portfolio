@@ -1,0 +1,44 @@
+.project-image {
+    width: 30rem;
+}
+
+.project-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.project-overview {
+    background-color: blanchedalmond;
+    padding: 1rem;
+    transition: background-color 500ms;
+
+    &:hover {
+        background-color: burlywood;
+    }
+}
+
+.profile {
+    height: 15rem;
+}
+
+.header {
+    display: flex;
+    gap: 5rem;
+    padding: 5rem;
+}
+
+tr:nth-child(even) {
+    background-color: blanchedalmond;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+}
+
+.experience-title {
+    display: flex;
+    justify-content: space-between;
+}
